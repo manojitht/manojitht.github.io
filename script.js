@@ -13,72 +13,6 @@ const PORTFOLIO_STATS = [
 document.addEventListener('DOMContentLoaded', () => {
 
     /* ──────────────────────────────────────────────
-       1. BOOT SCREEN
-    ────────────────────────────────────────────── */
-    const bootScreen = document.getElementById('boot-screen');
-
-    const bootLines = [
-        { text: '> SYSTEM BOOT SEQUENCE INITIATED...', hi: false },
-        { text: '> LOADING KERNEL MODULES.............. OK', hi: false },
-        { text: '> NEURAL INTERFACE DETECTED............ OK', hi: false },
-        { text: '> IDENTITY: MANOJITH THIYAGESWARAKUMAR', hi: true  },
-        { text: '> CLEARANCE LEVEL: ALPHA', hi: true  },
-        { text: '> ALL SYSTEMS NOMINAL.................. OK', hi: false },
-        { text: '> STATUS: ONLINE', hi: true  },
-    ];
-
-    function runBoot() {
-        if (!bootScreen) return;
-
-        /* Only play once per browser session */
-        if (sessionStorage.getItem('bootDone')) {
-            bootScreen.style.display = 'none';
-            return;
-        }
-
-        const linesEl    = document.getElementById('boot-lines');
-        const barWrap    = document.getElementById('boot-bar-wrap');
-        const fillEl     = document.getElementById('boot-fill');
-        const pctEl      = document.getElementById('boot-pct');
-        let idx = 0;
-
-        function addLine() {
-            if (idx < bootLines.length) {
-                const { text, hi } = bootLines[idx++];
-                const div = document.createElement('div');
-                div.className = 'boot-line' + (hi ? ' hi' : '');
-                div.textContent = text;
-                linesEl.appendChild(div);
-                setTimeout(addLine, 270);
-            } else {
-                /* Show progress bar */
-                barWrap.style.display = 'block';
-                let pct = 0;
-                const ticker = setInterval(() => {
-                    pct = Math.min(pct + 2, 100);
-                    if (pctEl) pctEl.textContent = pct + '%';
-                    if (pct >= 100) clearInterval(ticker);
-                }, 25);
-                setTimeout(() => { if (fillEl) fillEl.style.width = '100%'; }, 80);
-
-                /* Fade out */
-                setTimeout(() => {
-                    bootScreen.style.opacity = '0';
-                    bootScreen.style.transition = 'opacity .6s ease';
-                    setTimeout(() => {
-                        bootScreen.style.display = 'none';
-                        sessionStorage.setItem('bootDone', '1');
-                    }, 620);
-                }, 1700);
-            }
-        }
-
-        setTimeout(addLine, 300);
-    }
-
-    runBoot();
-
-    /* ──────────────────────────────────────────────
        2. STATS STRIP — render from config
     ────────────────────────────────────────────── */
     const statsStrip = document.getElementById('statsStrip');
@@ -122,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(type, 48);
             }
         };
-        setTimeout(type, sessionStorage.getItem('bootDone') ? 200 : 2800);
+        setTimeout(type, 200);
     }
 
     /* ──────────────────────────────────────────────
@@ -137,9 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    const sectionIds = ['hero', 'academic_logs', 'core_capabilities',
-        'operational_history', 'prime_works', 'projects',
-        'certificate_creds', 'honors', 'testimonials'];
+    const sectionIds = ['hero', 'education', 'skills', 'experience', 'projects', 'certifications', 'awards', 'testimonials'];
 
     const dotObserver = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -185,39 +117,40 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ──────────────────────────────────────────────
        7. ACCORDION TIMELINE
     ────────────────────────────────────────────── */
-    document.querySelectorAll('.tl-header').forEach(header => {
-        header.addEventListener('click', () => {
-            const item = header.closest('.timeline-item');
-            const isActive = item.classList.contains('tl-active');
-            document.querySelectorAll('.timeline-item').forEach(i => i.classList.remove('tl-active'));
-            if (!isActive) item.classList.add('tl-active');
+    document.querySelectorAll('.timeline-item').forEach(item => {
+        item.classList.add('tl-active');
+        item.querySelector('.tl-header')?.addEventListener('click', () => {
+            item.classList.toggle('tl-active');
         });
     });
-    const firstTl = document.querySelector('.timeline-item');
-    if (firstTl) firstTl.classList.add('tl-active');
 
     /* ──────────────────────────────────────────────
-       8. SCROLL FADE-IN (sections & cards)
+       8. SCROLL FADE-IN — staggered card animations
     ────────────────────────────────────────────── */
-    const fadeTargets = document.querySelectorAll(
-        '.section, .dossier-card, .cert-item, .award-badge-card, .comms-carousel, .edu-card, .skill-cluster, #statsStrip'
-    );
+    const CARD_SEL = '.edu-card, .skill-cluster, .dossier-card, .cert-item, .award-badge-card, .comms-carousel, .timeline-item';
 
-    const fadeObserver = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity    = '1';
-                entry.target.style.transform  = 'translateY(0)';
-                fadeObserver.unobserve(entry.target);
-            }
+    // Section-level fade
+    document.querySelectorAll('.section, .reach-out-section, #statsStrip').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transition = 'opacity .5s ease';
+        new IntersectionObserver(([e]) => {
+            if (e.isIntersecting) { el.style.opacity = '1'; }
+        }, { threshold: 0.05 }).observe(el);
+    });
+
+    // Card-level stagger within each section
+    document.querySelectorAll('.section').forEach(section => {
+        section.querySelectorAll(CARD_SEL).forEach((card, i) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = `opacity .5s ease ${i * 0.09}s, transform .5s ease ${i * 0.09}s`;
+            new IntersectionObserver(([e]) => {
+                if (e.isIntersecting) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }
+            }, { threshold: 0.08 }).observe(card);
         });
-    }, { threshold: 0.08 });
-
-    fadeTargets.forEach((el, i) => {
-        el.style.opacity    = '0';
-        el.style.transform  = 'translateY(22px)';
-        el.style.transition = `opacity .55s ease ${(i % 6) * 0.06}s, transform .55s ease ${(i % 6) * 0.06}s`;
-        fadeObserver.observe(el);
     });
 
     /* ──────────────────────────────────────────────
@@ -273,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
             corners.forEach(c => {
                 c.style.borderColor = '#fff';
                 setTimeout(() => {
-                    c.style.borderColor = '#ff00aa';
+                    c.style.borderColor = '#E8B84B';
                     setTimeout(() => { c.style.borderColor = ''; }, 200);
                 }, 140);
             });
@@ -314,22 +247,8 @@ function closeContactModal() {
    MODAL — CLASSIFIED DOSSIER
    ═══════════════════════════════════════════════════ */
 function openClassifiedModal() {
-    const modal    = document.getElementById('classified-modal');
-    const overlay  = document.getElementById('decryption-overlay');
-    const content  = document.getElementById('dossier-content');
-    const fill     = document.querySelector('.progress-fill');
-    if (!modal) return;
-
-    modal.style.display   = 'block';
-    overlay.style.display = 'flex';
-    content.style.display = 'none';
-    if (fill) fill.style.width = '0%';
-
-    setTimeout(() => { if (fill) fill.style.width = '100%'; }, 100);
-    setTimeout(() => {
-        overlay.style.display = 'none';
-        content.style.display = 'block';
-    }, 2100);
+    const modal = document.getElementById('classified-modal');
+    if (modal) modal.style.display = 'block';
 }
 
 function closeClassifiedModal() {
