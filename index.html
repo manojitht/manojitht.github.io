@@ -14,254 +14,387 @@
 </head>
 <body>
 
+    <!-- BOOT SCREEN -->
+    <div id="boot-screen">
+        <div class="boot-content">
+            <div class="boot-logo">MANOJITH_SYS <span class="boot-ver">v3.0</span></div>
+            <div id="boot-lines"></div>
+            <div class="boot-bar-wrap" id="boot-bar-wrap">
+                <span class="boot-bar-label">LOADING NEURAL INTERFACE</span>
+                <div class="boot-progress"><div class="boot-fill" id="boot-fill"></div></div>
+                <span class="boot-pct" id="boot-pct">0%</span>
+            </div>
+        </div>
+    </div>
+
     <div class="scanlines"></div>
 
+    <!-- SIDE NAV DOTS -->
+    <nav class="side-nav" id="sideNav">
+        <div class="side-dot" data-target="hero"><span class="dot-label">HOME</span></div>
+        <div class="side-dot" data-target="academic_logs"><span class="dot-label">ACADEMIC</span></div>
+        <div class="side-dot" data-target="core_capabilities"><span class="dot-label">SKILLS</span></div>
+        <div class="side-dot" data-target="operational_history"><span class="dot-label">EXPERIENCE</span></div>
+        <div class="side-dot" data-target="prime_works"><span class="dot-label">PRIME WORKS</span></div>
+        <div class="side-dot" data-target="projects"><span class="dot-label">PROJECTS</span></div>
+        <div class="side-dot" data-target="certificate_creds"><span class="dot-label">CERTS</span></div>
+        <div class="side-dot" data-target="honors"><span class="dot-label">HONORS</span></div>
+        <div class="side-dot" data-target="testimonials"><span class="dot-label">REVIEWS</span></div>
+    </nav>
+
+    <!-- TOP NAV -->
     <nav class="hud-nav">
         <div class="logo">MANOJITH <span class="blink">_</span></div>
         <ul class="nav-links">
-            <li><a href="#academic_logs">ACADEMIC_LOGS</a></li> 
-            <li><a href="#core_capabilities">CORE_CAPABILITIES</a></li>
-            <li><a href="#operational_history">OPERATIONAL_HISTORY</a></li>
+            <li><a href="#academic_logs">ACADEMIC</a></li>
+            <li><a href="#core_capabilities">SKILLS</a></li>
+            <li><a href="#operational_history">EXPERIENCE</a></li>
             <li><a href="#prime_works">PRIME_WORKS</a></li>
-            <li><a href="#certificate_creds">CERTIFICATE_CREDS</a></li>
+            <li><a href="#certificate_creds">CERTS</a></li>
         </ul>
     </nav>
 
-    <header class="hero">
-        <div class="hero-content">
-            <h3 class="system-msg">> HUMANOID ALIVE...</h3>
+    <!-- HERO: Three-Zone HUD -->
+    <header class="hero" id="hero">
+
+        <div class="hero-left">
+            <p class="system-msg">&gt; HUMANOID ALIVE...</p>
             <h1 class="glitch" data-text="MANOJITH THIYAGESWARAKUMAR">MANOJITH T.</h1>
-            <h2 class="role">AI/ML ENGINEER @ OMobio| Ex-SENIOR SOFTWARE ENGINEER @ EFutures</h2>
-            <p class="tagline">"I live in imagination, and bring it to existence." - Manojith</p>
+            <h2 class="role">AI/ML ENGINEER @ OMobio &nbsp;|&nbsp; Ex-SR. SOFTWARE ENGINEER @ EFutures</h2>
+            <p class="tagline">"I live in imagination, and bring it to existence." — Manojith</p>
             <p class="mission-text">I engineer intelligent AI agents and high-performance backend systems optimized for scale.</p>
-            
             <div class="cta-group">
                 <a href="javascript:void(0)" class="btn btn-primary" onclick="openContactModal()">INITIALIZE CONTACT</a>
-                <a href="javascript:void(0)" class="btn btn-secondary" onclick="openClassifiedModal()">ACCESS MY DOSSIER</a>
+                <a href="javascript:void(0)" class="btn btn-secondary" onclick="openClassifiedModal()">ACCESS DOSSIER</a>
             </div>
-
             <div class="awards-ticker">
-                <span>WORKED WITH TEAMS ACHIEVED: National Ingenuity SLASSCOM Gold 2025 | NBQSA Silver Award 2025</span>
+                <span>WORKED WITH TEAMS ACHIEVED: National Ingenuity SLASSCOM Gold 2025 &nbsp;|&nbsp; NBQSA Silver Award 2025</span>
             </div>
         </div>
 
-        <div class="hero-image-container">
-            <div class="reticle top-left"></div>
-            <div class="reticle top-right"></div>
-            <div class="reticle bottom-left"></div>
-            <div class="reticle bottom-right"></div>
-            <img src="assets/profile.png" alt="Manojith Thiyageswarakumar" class="profile-img">
-            <img src="assets/ai_engineer.png" alt="System AI Core" class="profile-img ai-core-img">
+        <div class="hero-center">
+            <div class="profile-hud">
+                <div class="hud-corner tl"></div>
+                <div class="hud-corner tr"></div>
+                <div class="hud-corner bl"></div>
+                <div class="hud-corner br"></div>
+                <div class="scan-line"></div>
+                <img src="assets/profile.png" alt="Manojith Thiyageswarakumar" class="profile-img">
+                <img src="assets/ai_engineer.png" alt="AI Core" class="ai-core-img">
+                <div class="hud-label hud-top">IDENTITY VERIFIED</div>
+                <div class="hud-label hud-bottom">AI / ML ENGINEER</div>
+            </div>
         </div>
+
     </header>
 
+    <!-- STATS STRIP — rendered by PORTFOLIO_STATS config in script.js -->
+    <div class="stats-strip" id="statsStrip"></div>
+
+    <!-- ACADEMIC LOGS -->
     <section id="academic_logs" class="section">
-        <h2 class="section-title"><span class="green-text">/</span> ACADEMIC LOGS [EDU]</h2>
+        <h2 class="section-title"><span class="green-text">/</span> ACADEMIC LOGS</h2>
         <div class="education-grid">
             <div class="edu-card">
+                <span class="edu-status-badge in-progress">IN PROGRESS</span>
+                <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
                 <h3>MSc in Artificial Intelligence</h3>
-                <span class="edu-place">SriLanka Institute of Information Technology | (Reading)</span>
-                <p>Started Year: 2025 -> Expected Year: 2027</p>
+                <span class="edu-place">SriLanka Institute of Information Technology</span>
+                <p>2025 → 2027</p>
             </div>
             <div class="edu-card">
-                <h3>BSc (Hons) Computer Science & Software Engineering</h3>
-                <span class="edu-place">Kingston University London | US Equivalent GPA: 3.5/4.0</span>
-                <p>Completed Year: 2023</p>
+                <span class="edu-status-badge completed">COMPLETED</span>
+                <div class="edu-icon"><i class="fas fa-university"></i></div>
+                <h3>BSc (Hons) Computer Science &amp; Software Engineering</h3>
+                <span class="edu-place">Kingston University London &nbsp;·&nbsp; GPA: 3.5 / 4.0</span>
+                <p>Completed: 2023</p>
             </div>
         </div>
     </section>
 
+    <!-- CORE CAPABILITIES: Skill Clusters -->
     <section id="core_capabilities" class="section">
-        <h2 class="section-title"><span class="green-text">/</span> CORE CAPABILITIES [SKILLS]</h2>
+        <h2 class="section-title"><span class="green-text">/</span> CORE CAPABILITIES</h2>
         <div class="skills-grid">
-            <div class="skill-card">
-                <i class="fas fa-brain"></i>
-                <h3>AI & ML CORE</h3>
-                <p>Scikit-learn, TensorFlow, Keras, OpenAI GPT-4/5, Llama 3, Qwen 7B, LangChain, LangGraph, CrewAI</p>
+
+            <div class="skill-cluster" style="--cc: var(--cyan)">
+                <div class="skill-cluster-header">
+                    <i class="fas fa-brain"></i>
+                    <span class="skill-cluster-name">AI &amp; ML ENGINEERING</span>
+                </div>
+                <div class="skill-tags">
+                    <span class="skill-tag tag-c">OpenAI GPT-4/5</span>
+                    <span class="skill-tag tag-c">Llama 3</span>
+                    <span class="skill-tag tag-c">Qwen 7B</span>
+                    <span class="skill-tag tag-c">LangChain</span>
+                    <span class="skill-tag tag-c">LangGraph</span>
+                    <span class="skill-tag tag-c">CrewAI</span>
+                    <span class="skill-tag tag-c">TensorFlow</span>
+                    <span class="skill-tag tag-c">Scikit-learn</span>
+                    <span class="skill-tag tag-c">Keras</span>
+                </div>
             </div>
-            <div class="skill-card">
-                <i class="fas fa-laptop-code"></i>
-                <h3>INTERFACE SKILLS</h3>
-                <p>React.js, Streamlit, HTML5, CSS3, JavaScript (ES6+)</p>
+
+            <div class="skill-cluster" style="--cc: var(--purple)">
+                <div class="skill-cluster-header">
+                    <i class="fas fa-server"></i>
+                    <span class="skill-cluster-name">BACKEND ENGINEERING</span>
+                </div>
+                <div class="skill-tags">
+                    <span class="skill-tag tag-p">Python</span>
+                    <span class="skill-tag tag-p">FastAPI</span>
+                    <span class="skill-tag tag-p">Django</span>
+                    <span class="skill-tag tag-p">Java</span>
+                    <span class="skill-tag tag-p">Laravel</span>
+                    <span class="skill-tag tag-p">REST APIs</span>
+                    <span class="skill-tag tag-p">WebSockets</span>
+                </div>
             </div>
-            <div class="skill-card">
-                <i class="fas fa-server"></i>
-                <h3>BACKEND SKILLS</h3>
-                <p>Python, FastAPI, Django, Java, Laravel(Not Active)</p>
+
+            <div class="skill-cluster" style="--cc: var(--neon-green)">
+                <div class="skill-cluster-header">
+                    <i class="fas fa-cloud"></i>
+                    <span class="skill-cluster-name">CLOUD &amp; DEVOPS</span>
+                </div>
+                <div class="skill-tags">
+                    <span class="skill-tag tag-g">AWS Bedrock</span>
+                    <span class="skill-tag tag-g">AWS SageMaker</span>
+                    <span class="skill-tag tag-g">EC2</span>
+                    <span class="skill-tag tag-g">Docker</span>
+                    <span class="skill-tag tag-g">Kubernetes</span>
+                    <span class="skill-tag tag-g">GitHub Actions</span>
+                    <span class="skill-tag tag-g">SonarQube</span>
+                </div>
             </div>
-            <div class="skill-card">
-                <i class="fas fa-cloud"></i>
-                <h3>CLOUD & DEVOPS</h3>
-                <p>AWS (Bedrock, Sagemaker, EC2, Amplify, CodePipeline, Elastic Beanstalk), Docker, Kubernetes, GitHub Actions, SonarQube</p>
+
+            <div class="skill-cluster" style="--cc: var(--magenta)">
+                <div class="skill-cluster-header">
+                    <i class="fas fa-database"></i>
+                    <span class="skill-cluster-name">DATABASE SYSTEMS</span>
+                </div>
+                <div class="skill-tags">
+                    <span class="skill-tag tag-m">PostgreSQL</span>
+                    <span class="skill-tag tag-m">PG Vector</span>
+                    <span class="skill-tag tag-m">MongoDB</span>
+                    <span class="skill-tag tag-m">MySQL</span>
+                    <span class="skill-tag tag-m">Redis</span>
+                    <span class="skill-tag tag-m">Pinecone</span>
+                    <span class="skill-tag tag-m">Chroma DB</span>
+                    <span class="skill-tag tag-m">Firebase</span>
+                </div>
             </div>
-            <div class="skill-card">
-                <i class="fas fa-database"></i>
-                <h3>DATABASE</h3>
-                <p>PostgreSQL, MongoDB, MySQL, Redis, Firebase, Vector Databases (Pinecone, Chroma DB, PG Vector)</p>
+
+            <div class="skill-cluster" style="--cc: var(--yellow)">
+                <div class="skill-cluster-header">
+                    <i class="fas fa-laptop-code"></i>
+                    <span class="skill-cluster-name">FRONTEND &amp; INTERFACE</span>
+                </div>
+                <div class="skill-tags">
+                    <span class="skill-tag tag-y">React.js</span>
+                    <span class="skill-tag tag-y">Streamlit</span>
+                    <span class="skill-tag tag-y">HTML5</span>
+                    <span class="skill-tag tag-y">CSS3</span>
+                    <span class="skill-tag tag-y">JavaScript ES6+</span>
+                </div>
             </div>
+
         </div>
     </section>
 
+    <!-- OPERATIONAL HISTORY: Vertical Accordion Timeline -->
     <section id="operational_history" class="section">
-        <h2 class="section-title"><span class="green-text">/</span> OPERATIONAL HISTORY [EXP]</h2>
+        <h2 class="section-title"><span class="green-text">/</span> OPERATIONAL HISTORY</h2>
         <div class="timeline">
-            
-            <div class="timeline-item">
-                <div class="timeline-date">NOV 2024 - PRESENT</div>
-                <div class="timeline-content">
-                    <h3>SENIOR SOFTWARE ENGINEER</h3>
-                    <h4>EFutures</h4>
 
-                    <div class="job-project">
-                        <h5 class="project-name">PROJECT: RESUME SCREENING & SHORTLISTING [In-House Project]</h5>
-                        <ul>
-                            <li><span class="bullet">></span> Implemented Parallelization design pattern for LLM model to rank the candidates who were relevant to job description.</li>
-                            <li><span class="bullet">></span> Implemented RAG-based workflow to store unstructured candidate's resume PDF/DOCX data and extract similarity candidates from vector store.</li>
-                            <li><span class="bullet">></span> Integrated OCR fallback layers with Tesseract and optimized processing tasks with Python asyncio.</li>
-                            <li><span class="bullet">></span> Built secure Google OAuth2 authentication, enabled G-drive file upload with organization domain-restricted access.</li>
-                            <li><span class="bullet">></span> Implemented a salary estimator by analysing the candidate's skills and work experience related to JD.</li>
-                            <li><span class="bullet">></span> Tech Stack: Python, FastAPI, PostgreSQL, PG Vector, Qwen 7B, Langchain, Google OAuth2, Google Drive API, HTML, CSS, JavaScript, AWS Bedrock, EC2.</li>
-                        </ul>
+            <!-- EFutures -->
+            <div class="timeline-item" data-tl="0">
+                <div class="tl-node"></div>
+                <div class="tl-card">
+                    <div class="tl-header">
+                        <div class="tl-meta">
+                            <span class="tl-date">NOV 2024 — PRESENT</span>
+                            <h3 class="tl-role">SR. SOFTWARE ENGINEER</h3>
+                            <span class="tl-company">EFutures &nbsp;<span class="tl-badge current">CURRENT</span></span>
+                        </div>
+                        <i class="fas fa-chevron-down tl-chevron"></i>
                     </div>
-
-                    <div class="job-project">
-                        <h5 class="project-name">PROJECT: USA Based logistics client</h5>
-                        <ul>
-                            <li><span class="bullet">></span> Designed and built the container space optimization algorithm using Bin Packing/Knapsack problem approach.</li>
-                            <li><span class="bullet">></span> Integrated a 3D visualization module to display optimized layouts, improving load efficiency and spatial accuracy.</li>
-                            <li><span class="bullet">></span> Tech Stack: Python, FastAPI, Matplotlib, React Js, Docker, AWS EC2.</li>
-                        </ul>
+                    <div class="tl-body">
+                        <div class="tl-body-inner">
+                            <div class="job-project">
+                                <h5 class="project-name">PROJECT: RESUME SCREENING &amp; SHORTLISTING [In-House]</h5>
+                                <ul>
+                                    <li><span class="bullet">></span> Implemented Parallelization design pattern for LLM model to rank candidates by job relevance.</li>
+                                    <li><span class="bullet">></span> Built RAG-based workflow storing unstructured PDF/DOCX resume data in vector store for similarity search.</li>
+                                    <li><span class="bullet">></span> Integrated OCR fallback layers with Tesseract and optimized tasks with Python asyncio.</li>
+                                    <li><span class="bullet">></span> Built secure Google OAuth2 auth with G-Drive upload and organization domain-restricted access.</li>
+                                    <li><span class="bullet">></span> Implemented a salary estimator by analysing candidate skills relative to JD.</li>
+                                    <li><span class="bullet">></span> <span class="tech-inline">Python · FastAPI · PostgreSQL · PG Vector · Qwen 7B · LangChain · Google OAuth2 · AWS Bedrock · EC2</span></li>
+                                </ul>
+                            </div>
+                            <div class="job-project">
+                                <h5 class="project-name">PROJECT: USA BASED LOGISTICS CLIENT</h5>
+                                <ul>
+                                    <li><span class="bullet">></span> Designed container space optimization algorithm using Bin Packing / Knapsack approach.</li>
+                                    <li><span class="bullet">></span> Integrated 3D visualization module for optimized layouts, improving load efficiency.</li>
+                                    <li><span class="bullet">></span> <span class="tech-inline">Python · FastAPI · Matplotlib · React.js · Docker · AWS EC2</span></li>
+                                </ul>
+                            </div>
+                            <div class="job-project">
+                                <h5 class="project-name">PROJECT: UK BASED PARCEL DELIVERY CLIENT</h5>
+                                <ul>
+                                    <li><span class="bullet">></span> Built conversational AI Agent with MongoDB integration, reducing LLM API costs by 40%.</li>
+                                    <li><span class="bullet">></span> Enhanced performance through RAG and semantic caching, reducing query latency.</li>
+                                    <li><span class="bullet">></span> <span class="tech-inline">Python · FastAPI · MongoDB · Pinecone · Sonnet 3.7 · Llama 3.2B · LangChain · React.js · AWS Bedrock</span></li>
+                                </ul>
+                            </div>
+                            <div class="job-project">
+                                <h5 class="project-name">PROJECT: SWEDEN BASED THERAPIST CLIENT [PROTOTYPE]</h5>
+                                <ul>
+                                    <li><span class="bullet">></span> Developed real-time group chat therapy prototype with LLM integration for couples.</li>
+                                    <li><span class="bullet">></span> Implemented customizable session prompt feature for therapist control.</li>
+                                    <li><span class="bullet">></span> <span class="tech-inline">Python · FastAPI · MongoDB · GPT-4 · LangChain · Streamlit · Docker · AWS EC2</span></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="job-project">
-                        <h5 class="project-name">PROJECT: UK Based Parcel Delivery Client</h5>
-                        <ul>
-                            <li><span class="bullet">></span> Built a conversational AI Agent with integrated MongoDB data source, reducing LLM API costs by 40%.</li>
-                            <li><span class="bullet">></span> Enhanced performance through Retrieval-Augmented Generation (RAG) and semantic caching, reducing query latency and improving response accuracy.</li>
-                            <li><span class="bullet">></span> Tech Stack: Python, FastAPI, MongoDB, Pinecone, Sonnet 3.7, Llama 3.2B instruct, Langchain, Google charts, React Js, Docker, AWS Bedrock, EC2, GitHub Actions (CI/CD).</li>
-                        </ul>
-                    </div>
-
-                    <div class="job-project">
-                        <h5 class="project-name">PROJECT: Sweden Based Therapist Client [PROTOTYPE]</h5>
-                        <ul>
-                            <li><span class="bullet">></span> Developed real-time group chat therapy prototype with LLM integration for couples.</li>
-                            <li><span class="bullet">></span> Implemented a feature to customize the chat session's prompt by therapist.</li>
-                            <li><span class="bullet">></span> Tech Stack: Python, FastAPI, MongoDB, GPT-4, Langchain, Streamlit, Docker, AWS EC2, GitHub Actions (CI/CD).</li>
-                        </ul>
-                    </div>
-
                 </div>
             </div>
 
-            <div class="timeline-item">
-                <div class="timeline-date">SEP 2023 - SEP 2024</div>
-                <div class="timeline-content">
-                    <h3>SOFTWARE ENGINEER</h3>
-                    <h4>Innodata</h4>
-
-                    <div class="job-project">
-                        <h5 class="project-name">PROJECT: INTELLIGENT AUTOMATED PUBLISHING PLATFORM [PRODUCT]</h5>
-                        <ul>
-                            <li><span class="bullet">></span> Built NLP text summarization for German XML datasets (10K-30K words).</li>
-                            <li><span class="bullet">></span> Reduced frontend bug density by 32%.</li>
-                            <li><span class="bullet">></span> Optimized Intelligent Automated Publishing Platform.</li>
-                            <li><span class="bullet">></span> Tech Stack: Python, FastAPI, PHP, Laravel, JavaScript, React Js, MySQL, GPT-3, SonarQube.</li>
-                        </ul>
+            <!-- Innodata -->
+            <div class="timeline-item" data-tl="1">
+                <div class="tl-node"></div>
+                <div class="tl-card">
+                    <div class="tl-header">
+                        <div class="tl-meta">
+                            <span class="tl-date">SEP 2023 — SEP 2024</span>
+                            <h3 class="tl-role">SOFTWARE ENGINEER</h3>
+                            <span class="tl-company">Innodata &nbsp;<span class="tl-badge past">COMPLETED</span></span>
+                        </div>
+                        <i class="fas fa-chevron-down tl-chevron"></i>
                     </div>
-
+                    <div class="tl-body">
+                        <div class="tl-body-inner">
+                            <div class="job-project">
+                                <h5 class="project-name">PROJECT: INTELLIGENT AUTOMATED PUBLISHING PLATFORM [PRODUCT]</h5>
+                                <ul>
+                                    <li><span class="bullet">></span> Built NLP text summarization for German XML datasets (10K–30K words).</li>
+                                    <li><span class="bullet">></span> Reduced frontend bug density by 32%.</li>
+                                    <li><span class="bullet">></span> Optimized the Intelligent Automated Publishing Platform performance end-to-end.</li>
+                                    <li><span class="bullet">></span> <span class="tech-inline">Python · FastAPI · PHP · Laravel · JavaScript · React.js · MySQL · GPT-3 · SonarQube</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="timeline-item">
-                <div class="timeline-date">JUN 2022 - SEP 2023</div>
-                <div class="timeline-content">
-                    <h3>ASSOCIATE SOFTWARE ENGINEER</h3>
-                    <h4>Virtusa</h4>
-
-                    <div class="job-project">
-                        <h5 class="project-name">PROJECT: USA BASED WAREHOUSE CLIENT</h5>
-                        <ul>
-                            <li><span class="bullet">></span> Implemented automated email flagging system for warehouse logistics.</li>
-                            <li><span class="bullet">></span> Optimized case management workflows.</li>
-                            <li><span class="bullet">></span> Tech Stack: SalesForce, Apex, Sales Cloud, CPQ, Python, JavaScript, SOQL, Lightning Web Component.</li>
-                        </ul>
+            <!-- Virtusa -->
+            <div class="timeline-item" data-tl="2">
+                <div class="tl-node"></div>
+                <div class="tl-card">
+                    <div class="tl-header">
+                        <div class="tl-meta">
+                            <span class="tl-date">JUN 2022 — SEP 2023</span>
+                            <h3 class="tl-role">ASSOCIATE SOFTWARE ENGINEER</h3>
+                            <span class="tl-company">Virtusa &nbsp;<span class="tl-badge past">COMPLETED</span></span>
+                        </div>
+                        <i class="fas fa-chevron-down tl-chevron"></i>
                     </div>
-
+                    <div class="tl-body">
+                        <div class="tl-body-inner">
+                            <div class="job-project">
+                                <h5 class="project-name">PROJECT: USA BASED WAREHOUSE CLIENT</h5>
+                                <ul>
+                                    <li><span class="bullet">></span> Implemented automated email flagging system for warehouse logistics.</li>
+                                    <li><span class="bullet">></span> Optimized case management workflows for the client.</li>
+                                    <li><span class="bullet">></span> <span class="tech-inline">SalesForce · Apex · Sales Cloud · CPQ · Python · JavaScript · SOQL · Lightning Web Component</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
         </div>
     </section>
 
+    <!-- PRIME WORKS -->
     <section id="prime_works" class="section">
         <h2 class="section-title"><span class="green-text">/</span> PRIME WORKS</h2>
         <div class="featured-project-container">
             <div class="featured-content">
+                <div class="featured-tag">★ FEATURED PROJECT</div>
                 <h3>NEXUS INTELLIGENT LOGISTICS</h3>
                 <span class="status-badge">STATUS: IN DEVELOPMENT</span>
                 <p>
-                    Architecting a cloud-native microservices platform for real-time fleet management. 
-                    Orchestrating high-concurrency geospatial data ingestion with event-driven architecture to enable autonomous dispatching and dynamic route optimization.
+                    Architecting a cloud-native microservices platform for real-time fleet management.
+                    Orchestrating high-concurrency geospatial data ingestion with event-driven architecture
+                    to enable autonomous dispatching and dynamic route optimization.
                 </p>
                 <ul class="tech-specs">
                     <li><i class="fas fa-check"></i> Designed event-driven microservices handling 10k+ concurrent connections</li>
                     <li><i class="fas fa-check"></i> Implemented sub-50ms latency for real-time geospatial tracking</li>
                     <li><i class="fas fa-check"></i> Integrated ML inference engine for dynamic ETA prediction</li>
-                    <li><i class="fas fa-check"></i> Stack: FastAPI, Docker, AWS (ECS), RabbitMQ, PostgreSQL (PostGIS)</li>
+                    <li><i class="fas fa-check"></i> Stack: FastAPI · Docker · AWS (ECS) · RabbitMQ · PostgreSQL (PostGIS)</li>
                 </ul>
-                <!-- <div class="project-actions">
-                    <a href="#" class="btn btn-primary">VIEW DEMO</a>
-                    <a href="#" class="btn btn-secondary">ARCHITECTURE</a>
-                </div> -->
             </div>
             <div class="featured-visual">
-                <img src="assets/arch/nexus_architecture.png" alt="Nexus System Architecture Microservices Diagram" 
-                    class="architecture-img" onclick="openModal(this.src)">
+                <img src="assets/arch/nexus_architecture.png" alt="Nexus Architecture" class="architecture-img" onclick="openModal(this.src)">
                 <div class="arch-overlay">CLICK TO ENHANCE ARCHITECTURE</div>
             </div>
         </div>
     </section>
 
+    <!-- PAST MISSIONS: Classified Dossier Cards -->
     <section id="projects" class="section">
         <h2 class="section-title"><span class="green-text">/</span> PAST MISSIONS</h2>
         <div class="project-grid">
-            
-            <div class="project-card">
-                <div class="card-header">
-                    <h3><i class="fas fa-user"></i> ORMS: RESOURCE TRACKING</h3>
+
+            <div class="dossier-card">
+                <div class="dossier-meta">
+                    <span class="file-stamp">CLASSIFIED</span>
+                    <span class="file-num">FILE #001</span>
                 </div>
-                <p>Web-based resource tracking platform. Implemented resource recommendation algorithms to optimize allocation efficiency.</p>
+                <h3 class="dossier-title"><i class="fas fa-user"></i> ORMS: RESOURCE TRACKING</h3>
+                <div class="clearance-badge">CLEARANCE: PUBLIC</div>
+                <p class="dossier-brief">Web-based resource tracking platform with recommendation algorithms to optimize allocation efficiency.</p>
                 <div class="tags">
-                    <span>Python</span><span>Django</span><span>PostgreSQL</span><span>JavaScript</span><span>AWS ElasticBeanstalk</span><span>AWS CodePipeline</span>
-                    <span>HTML</span><span>CSS</span><span>JQuery</span>
+                    <span>Python</span><span>Django</span><span>PostgreSQL</span><span>JavaScript</span>
+                    <span>AWS ElasticBeanstalk</span><span>AWS CodePipeline</span><span>HTML</span><span>CSS</span><span>JQuery</span>
                 </div>
                 <div class="card-links">
                     <a href="https://github.com/manojitht/ORMS" target="_blank"><i class="fab fa-github"></i> SOURCE_CODE</a>
-                    </div>
+                </div>
             </div>
 
-            <div class="project-card">
-                <div class="card-header">
-                    <h3><i class="fas fa-users"></i> POWER FUEL SYSTEM</h3>
+            <div class="dossier-card">
+                <div class="dossier-meta">
+                    <span class="file-stamp">CLASSIFIED</span>
+                    <span class="file-num">FILE #002</span>
                 </div>
-                <p>Multi-platform fuel management system (Web & Mobile) with QR verification and real-time quota synchronization.</p>
+                <h3 class="dossier-title"><i class="fas fa-gas-pump"></i> POWER FUEL SYSTEM</h3>
+                <div class="clearance-badge">CLEARANCE: PUBLIC</div>
+                <p class="dossier-brief">Multi-platform fuel management system (Web &amp; Mobile) with QR verification and real-time quota synchronization.</p>
                 <div class="tags">
-                    <span>Python</span><span>Django</span><span>HTML</span><span>CSS</span><span>Bootstrap</span><span>Dart</span><span>Flutter</span><span>MongoDB</span><span>Firebase</span>
-                    <span>AWS ElasticBeanstalk</span>
+                    <span>Python</span><span>Django</span><span>HTML</span><span>CSS</span><span>Bootstrap</span>
+                    <span>Dart</span><span>Flutter</span><span>MongoDB</span><span>Firebase</span><span>AWS ElasticBeanstalk</span>
                 </div>
                 <div class="card-links">
                     <a href="https://github.com/manojitht/power-fuel" target="_blank"><i class="fab fa-github"></i> SOURCE_CODE</a>
                 </div>
             </div>
 
-            <div class="project-card">
-                <div class="card-header">
-                    <h3><i class="fas fa-user"></i> MEDI-APP</h3>
+            <div class="dossier-card">
+                <div class="dossier-meta">
+                    <span class="file-stamp">CLASSIFIED</span>
+                    <span class="file-num">FILE #003</span>
                 </div>
-                <p>An android mobile based medical e-commerce management system & admin panel with web app, real-time data synchronization with analytics.</p>
+                <h3 class="dossier-title"><i class="fas fa-heartbeat"></i> MEDI-APP</h3>
+                <div class="clearance-badge">CLEARANCE: PUBLIC</div>
+                <p class="dossier-brief">Android mobile-based medical e-commerce management system with admin panel, real-time data sync and analytics.</p>
                 <div class="tags">
-                    <span>Java</span><span>Android Studio</span><span>Firebase</span><span>Firestore</span><span>XML</span><span>React Js</span><span>AWS Amplify</span><span>Firebase Analytics</span>
+                    <span>Java</span><span>Android Studio</span><span>Firebase</span><span>Firestore</span>
+                    <span>XML</span><span>React.js</span><span>AWS Amplify</span><span>Firebase Analytics</span>
                 </div>
                 <div class="card-links">
                     <a href="https://github.com/manojitht/MediApp--EFOSEYOUYES" target="_blank"><i class="fab fa-github"></i> SOURCE_CODE</a>
@@ -271,191 +404,172 @@
         </div>
     </section>
 
+    <!-- CERTIFICATE CREDS: Credential Vault Strip -->
     <section id="certificate_creds" class="section">
         <h2 class="section-title"><span class="green-text">/</span> CERTIFICATE CREDS</h2>
-        <div class="skills-grid">
-            
-            <div class="skill-card cert-card" onclick="openModal('assets/certs/oci_generative_ai_professional_2025.png')">
-                <i class="fas fa-certificate"></i>
-                <h3>OCI GEN AI PROFESSIONAL</h3>
-                <p>Oracle Cloud Infrastructure 2025</p>
-                <div class="view-indicator">[ VIEW_FILE ]</div>
+        <div class="cert-strip">
+
+            <div class="cert-item" onclick="openModal('assets/certs/oci_generative_ai_professional_2025.png')">
+                <div class="cert-badge-icon cyan-cert"><i class="fas fa-certificate"></i></div>
+                <div class="cert-info">
+                    <span class="cert-issuer">ORACLE CLOUD INFRASTRUCTURE</span>
+                    <h3 class="cert-name">OCI GEN AI PROFESSIONAL</h3>
+                    <span class="cert-year">2025</span>
+                </div>
+                <div class="cert-action">[ VIEW ]</div>
             </div>
 
-            <div class="skill-card cert-card" onclick="openModal('assets/certs/oci_ai_foundations_associate_2025.png')">
-                <i class="fas fa-certificate"></i>
-                <h3>OCI AI FOUNDATIONS</h3>
-                <p>Oracle Cloud Infrastructure 2025</p>
-                <div class="view-indicator">[ VIEW_FILE ]</div>
+            <div class="cert-item" onclick="openModal('assets/certs/oci_ai_foundations_associate_2025.png')">
+                <div class="cert-badge-icon magenta-cert"><i class="fas fa-certificate"></i></div>
+                <div class="cert-info">
+                    <span class="cert-issuer">ORACLE CLOUD INFRASTRUCTURE</span>
+                    <h3 class="cert-name">OCI AI FOUNDATIONS ASSOCIATE</h3>
+                    <span class="cert-year">2025</span>
+                </div>
+                <div class="cert-action">[ VIEW ]</div>
             </div>
 
-            <div class="skill-card cert-card" onclick="openModal('assets/certs/advanced_python.png')">
-                <i class="fas fa-code"></i>
-                <h3>ADVANCED PYTHON</h3>
-                <p>Advanced Programming Certification</p>
-                <div class="view-indicator">[ VIEW_FILE ]</div>
+            <div class="cert-item" onclick="openModal('assets/certs/advanced_python.png')">
+                <div class="cert-badge-icon purple-cert"><i class="fas fa-code"></i></div>
+                <div class="cert-info">
+                    <span class="cert-issuer">PROGRAMMING CERTIFICATION</span>
+                    <h3 class="cert-name">ADVANCED PYTHON</h3>
+                    <span class="cert-year">—</span>
+                </div>
+                <div class="cert-action">[ VIEW ]</div>
             </div>
 
-            <div class="skill-card cert-card" onclick="openModal('assets/certs/software_architecture_from_developer_to_architect.png')">
-                <i class="fas fa-layer-group"></i>
-                <h3>SOFTWARE ARCHITECTURE</h3>
-                <p>From Developer to Architect</p>
-                <div class="view-indicator">[ VIEW_FILE ]</div>
+            <div class="cert-item" onclick="openModal('assets/certs/software_architecture_from_developer_to_architect.png')">
+                <div class="cert-badge-icon green-cert"><i class="fas fa-layer-group"></i></div>
+                <div class="cert-info">
+                    <span class="cert-issuer">ARCHITECTURE CERTIFICATION</span>
+                    <h3 class="cert-name">SOFTWARE ARCHITECTURE</h3>
+                    <span class="cert-year">—</span>
+                </div>
+                <div class="cert-action">[ VIEW ]</div>
             </div>
 
         </div>
     </section>
 
+    <!-- RECOGNITIONS: Award Badges -->
     <section id="honors" class="section">
-        <h2 class="section-title"><span class="green-text">/</span> RECOGNITIONS [HONORS]</h2>
-        
-        <div class="project-grid">
+        <h2 class="section-title"><span class="green-text">/</span> RECOGNITIONS</h2>
+        <div class="awards-showcase">
 
-            <div class="project-card honor-card">
-                <div class="card-header">
-                    <h3><i class="fas fa-medal green-text"></i> NATIONAL ICT AWARDS (NBQSA)</h3>
-                </div>
-                <span class="status-badge" style="background: silver; color: black;">AWARD: SILVER WINNER 2025</span>
-                <p>Recognized for excellence in Industrial Transport solutions. Competed against top national engineering teams.</p>
-                <div class="tags">
-                    <span>National Level</span><span>Innovation</span>
+            <div class="award-badge-card">
+                <div class="award-icon-wrap silver-award"><i class="fas fa-medal"></i></div>
+                <div class="award-body">
+                    <span class="award-org">NATIONAL ICT AWARDS (NBQSA)</span>
+                    <h3 class="award-name">SILVER WINNER</h3>
+                    <span class="award-year-badge">2025</span>
+                    <p>Recognized for excellence in Industrial Transport solutions. Competed against top national engineering teams.</p>
+                    <div class="tags"><span>National Level</span><span>Innovation</span></div>
                 </div>
             </div>
 
-            <div class="project-card honor-card">
-                <div class="card-header">
-                    <h3><i class="fas fa-gavel green-text"></i> ADAPTIQ HACKATHON</h3>
-                </div>
-                <span class="status-badge">ROLE: TECHNICAL JUDGE</span>
-                <p>
-                    I was invited as a technical evaluator for the <strong>ADAPTIQ Innovation Competition</strong> (Organized by IEEE Student Branch at IIT).
-                    Tasked with assessing algorithmic efficiency, creative problem solving, and system adaptability of participating units.
-                </p>
-                <div class="tags">
-                    <span>IEEE</span><span>System Evaluator</span>
-                </div>
-                
-                <div class="card-links">
-                    <a href="javascript:void(0)" onclick="openModal('assets/certs/adaptiq_judge.jpeg')">
-                        <i class="fas fa-eye"></i> VIEW TOKEN OF APPRECIATION
-                    </a>
+            <div class="award-badge-card">
+                <div class="award-icon-wrap cyan-award"><i class="fas fa-gavel"></i></div>
+                <div class="award-body">
+                    <span class="award-org">ADAPTIQ HACKATHON — IEEE IIT</span>
+                    <h3 class="award-name">TECHNICAL JUDGE</h3>
+                    <span class="award-year-badge">2025</span>
+                    <p>Invited as technical evaluator for ADAPTIQ Innovation Competition (IEEE Student Branch at IIT). Assessed algorithmic efficiency, creative problem solving, and system adaptability.</p>
+                    <div class="tags"><span>IEEE</span><span>System Evaluator</span></div>
+                    <div class="card-links">
+                        <a href="javascript:void(0)" onclick="openModal('assets/certs/adaptiq_judge.jpeg')">
+                            <i class="fas fa-eye"></i> VIEW TOKEN OF APPRECIATION
+                        </a>
+                    </div>
                 </div>
             </div>
 
         </div>
     </section>
 
+    <!-- PEER REVIEWS: Secure Comms Style -->
     <section id="testimonials" class="section">
         <h2 class="section-title"><span class="green-text">/</span> PEER REVIEWS</h2>
-        
-        <div class="testimonial-grid">
-            
-            <div class="log-card">
-                <div class="log-header">
-                    <i class="fas fa-quote-left green-text"></i>
-                    <span class="log-id">TESTIMONIAL_001</span>
-                </div>
-                <p class="log-message">
-                    "I had the pleasure of directly managing Manojith during our OMS project, and he was one of those team members who consistently exceeded expectations.
-                    <br><br>
-                    Manojith played a key role in driving the AI/ML development on the project, bringing both technical depth and a genuine passion for the work. 
-                    What stood out to me most was his enthusiasm for learning: he never shied away from stepping into unfamiliar domains or picking up new technologies, 
-                    and he did so with a speed and confidence that made a real impact on the team.
-                    <br><br>
-                    He's the kind of engineer who makes every project better, not just through his technical contributions, but through the energy and curiosity he brings. 
-                    I'd highly recommend Manojith to any team looking for a driven, adaptable AI/ML engineer." 
-                    </p>
-                <div class="log-author">
-                    <span class="green-text">> SENDER:</span> Chinthaka Fernando
-                    <br>
-                    <span class="author-role">Senior Manager - Process Improvement/Project Management @ EFutures</span>
-                </div>
-            </div>
+        <div class="comms-carousel">
+            <div class="comms-track" id="commsTrack">
 
-        </div>
-        <div class="testimonial-grid">
-            
-            <div class="log-card">
-                <div class="log-header">
-                    <i class="fas fa-quote-left green-text"></i>
-                    <span class="log-id">TESTIMONIAL_002</span>
-                </div>
-                <p class="log-message">
-                    "I've had the pleasure of working with Manojith on multiple projects involving LLMs, Generative AI, Machine Learning, and Deep Learning. As a Senior Software Engineer, 
-                    Manojith brings a rare combination of curiosity, dedication, and technical skill that makes him stand out, even early in his career. He's a fast learner with a genuine passion for AI and emerging technologies. 
-                    I've seen him dive into complex topics, ask insightful questions, and apply new knowledge quickly and effectively. His thirst for learning and drive to grow are truly impressive.
-                    <br><br>
-                    Beyond his technical abilities, Manojith is a trustworthy teammate, a strong collaborator, and a great friend. 
-                    He's someone you can rely on, whether it's for solving engineering challenges or pushing the team forward with his positive energy and determination.
-                    <br><br>
-                    I'm excited to see how far he'll go, because he's already moving fast and in the right direction. Any team would be lucky to have him." 
+                <div class="comms-card">
+                    <div class="comms-header">
+                        <div class="comms-meta-left">
+                            <div class="comms-meta-row"><span class="comms-key">FROM:</span> <span class="comms-val">Chinthaka Fernando</span></div>
+                            <div class="comms-meta-row"><span class="comms-key">ROLE:</span> <span class="comms-val">Senior Manager — Process Improvement @ EFutures</span></div>
+                        </div>
+                        <span class="comms-id">MSG_001</span>
+                    </div>
+                    <div class="comms-divider">&gt; REVIEW:</div>
+                    <p class="comms-message">
+                        "I had the pleasure of directly managing Manojith during our OMS project, and he was one of those team members who consistently exceeded expectations.
+                        Manojith played a key role in driving the AI/ML development on the project, bringing both technical depth and a genuine passion for the work.
+                        What stood out to me most was his enthusiasm for learning — he never shied away from stepping into unfamiliar domains or picking up new technologies,
+                        and he did so with a speed and confidence that made a real impact on the team.
+                        He's the kind of engineer who makes every project better, not just through his technical contributions, but through the energy and curiosity he brings.
+                        I'd highly recommend Manojith to any team looking for a driven, adaptable AI/ML engineer."
                     </p>
-                <div class="log-author">
-                    <span class="green-text">> SENDER:</span> Ganesh Nayanajith Lokugamage
-                    <br>
-                    <span class="author-role">Senior Software Engineer @ Amused Group Sri Lanka</span>
                 </div>
-            </div>
 
+                <div class="comms-card">
+                    <div class="comms-header">
+                        <div class="comms-meta-left">
+                            <div class="comms-meta-row"><span class="comms-key">FROM:</span> <span class="comms-val">Ganesh Nayanajith Lokugamage</span></div>
+                            <div class="comms-meta-row"><span class="comms-key">ROLE:</span> <span class="comms-val">Senior Software Engineer @ Amused Group</span></div>
+                        </div>
+                        <span class="comms-id">MSG_002</span>
+                    </div>
+                    <div class="comms-divider">&gt; REVIEW:</div>
+                    <p class="comms-message">
+                        "I've had the pleasure of working with Manojith on multiple projects involving LLMs, Generative AI, Machine Learning, and Deep Learning.
+                        Manojith brings a rare combination of curiosity, dedication, and technical skill that makes him stand out, even early in his career.
+                        He's a fast learner with a genuine passion for AI and emerging technologies. I've seen him dive into complex topics, ask insightful questions,
+                        and apply new knowledge quickly and effectively. Beyond his technical abilities, Manojith is a trustworthy teammate, a strong collaborator, and a great friend.
+                        I'm excited to see how far he'll go, because he's already moving fast and in the right direction. Any team would be lucky to have him."
+                    </p>
+                </div>
+
+            </div>
+            <div class="comms-controls">
+                <button class="comms-btn" id="commsPrev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+                <div class="comms-dots" id="commsDots"></div>
+                <button class="comms-btn" id="commsNext" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+            </div>
         </div>
     </section>
 
-    <!-- After research work completion we can add this -->
-    <!-- <section id="research" class="section">
-        <h2 class="section-title"><span class="green-text">/</span> RESEARCH ACTIVITY</h2>
-        <div class="research-container">
-            <div class="research-item">
-                <h3><i class="fas fa-microchip"></i> TinyML Research</h3>
-                <p>Actively participated in TinyML research with Dr. Dinuka Sahabandu (University of Washington, USA). Focused on Agent-Based Systems and Machine Learning optimization for edge devices.</p>
-                <a href="#" class="link-arrow">WORK ONGOING -></a>
+    <!-- CTA SECTION -->
+    <section class="cta-section">
+        <div class="cta-inner">
+            <p class="cta-pre">&gt; TRANSMISSION CHANNEL OPEN</p>
+            <h2 class="cta-title">READY TO COLLABORATE?</h2>
+            <p class="cta-sub">Engineered for impact. Available for the right mission.</p>
+            <div class="cta-avail">
+                <span class="blink" style="color:var(--neon-green)">●</span>
+                &nbsp;AVAILABLE 6AM – 11PM IST &nbsp;·&nbsp; COLOMBO, SRI LANKA
             </div>
         </div>
-    </section> -->
+    </section>
 
+    <!-- MODALS -->
     <div id="classified-modal" class="modal">
         <div class="modal-content dossier-box">
             <span class="close-modal" onclick="closeClassifiedModal()">&times;</span>
-            
             <div id="decryption-overlay">
-                <div class="loader-text">> DECRYPTING SECURE FILES...</div>
+                <div class="loader-text">&gt; DECRYPTING SECURE FILES...</div>
                 <div class="progress-bar"><div class="progress-fill"></div></div>
                 <div class="matrix-code">-- ACCESS GRANTED --</div>
             </div>
-
-            <div id="dossier-content" style="display: none;">
+            <div id="dossier-content" style="display:none;">
                 <h2 class="dossier-title">MY DOSSIER</h2>
-                
                 <div class="dossier-grid">
-                    <div class="fact-card">
-                        <i class="fas fa-coffee green-text"></i>
-                        <h3>FUEL CONSUMPTION</h3>
-                        <p>1-2 Cups of Coffee / Day</p>
-                    </div>
-
-                    <div class="fact-card">
-                        <i class="fas fa-gamepad green-text"></i>
-                        <h3>DOWNTIME ACTIVITY</h3>
-                        <p>Day Dreaming</p>
-                    </div>
-
-                    <div class="fact-card">
-                        <i class="fas fa-user green-text"></i>
-                        <h3>HUMANOID AGE</h3>
-                        <p>25 YRS</p>
-                    </div>
-
-                    <div class="fact-card">
-                        <i class="fas fa-globe-asia green-text"></i>
-                        <h3>ORIGIN POINT</h3>
-                        <p>Colombo, Sri Lanka</p>
-                    </div>
+                    <div class="fact-card"><i class="fas fa-coffee green-text"></i><h3>FUEL CONSUMPTION</h3><p>1–2 Cups of Coffee / Day</p></div>
+                    <div class="fact-card"><i class="fas fa-gamepad green-text"></i><h3>DOWNTIME ACTIVITY</h3><p>Day Dreaming</p></div>
+                    <div class="fact-card"><i class="fas fa-user green-text"></i><h3>HUMANOID AGE</h3><p id="humanoid-age">-- YRS</p></div>
+                    <div class="fact-card"><i class="fas fa-globe-asia green-text"></i><h3>ORIGIN POINT</h3><p>Colombo, Sri Lanka</p></div>
                 </div>
-
-                <div class="dossier-footer">
-                    <p>> SOCIAL LINKS:</p>
-                    <a href="https://github.com/manojitht" target="_blank" class="btn btn-primary"><i class="fab fa-github"></i> GITHUB</a>
-                    <a href="https://linkedin.com/in/manojith-thiyageswarakumar-25125b170" target="_blank" class="btn btn-primary"><i class="fab fa-linkedin"></i> LINKEDIN</a>
-                </div>
+                <p class="dossier-eof">&gt; END OF FILE — CLASSIFIED</p>
             </div>
         </div>
     </div>
@@ -463,41 +577,35 @@
     <div id="cert-modal" class="modal">
         <span class="close-modal" onclick="closeModal()">&times;</span>
         <img class="modal-content" id="modal-img">
-        <div id="caption"></div>
     </div>
 
     <div id="contact-modal" class="modal">
         <div class="modal-content contact-box">
             <span class="close-modal" onclick="closeContactModal()">&times;</span>
-            <h2 class="comms-title">> UPLINK ESTABLISHED</h2>
-            
+            <h2 class="comms-title">&gt; UPLINK ESTABLISHED</h2>
             <div class="contact-grid">
                 <a href="tel:+94777210098" class="contact-option">
-                    <i class="fas fa-phone-alt"></i>
-                    <span>+94 777210098</span>
+                    <i class="fas fa-phone-alt"></i><span>+94 777210098</span>
                 </a>
-
                 <a href="mailto:manojithtjmkm@gmail.com" class="contact-option">
-                    <i class="fas fa-envelope"></i>
-                    <span>manojithtjmkm@gmail.com</span>
+                    <i class="fas fa-envelope"></i><span>manojithtjmkm@gmail.com</span>
                 </a>
             </div>
-            
-            <p class="comms-status">AVAILBLE FROM 6.00AM TO 11.00PM @ IST ZONE</p>
+            <p class="comms-status">AVAILABLE 6.00AM TO 11.00PM @ IST ZONE</p>
         </div>
     </div>
 
-    <footer id="contact">
-        <div class="footer-content">
-            <!-- <h2>> MY RESUME...</h2>
-            <div class="resume-link">
-                <a href="Manojith Thiyageswarakumar - Resume.pdf" download> DOWNLOAD RESUME</a>
-            </div> -->
-            <p class="copyright">DESIGNED & DEVELOPED BY MANOJITH THIYAGESWARAKUMAR.</p>
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <p class="copyright">© MANOJITH THIYAGESWARAKUMAR &nbsp;·&nbsp; 2026</p>
+            <div class="footer-socials">
+                <a href="https://github.com/manojitht" target="_blank" class="footer-social-link"><i class="fab fa-github"></i><span>GITHUB</span></a>
+                <a href="https://linkedin.com/in/manojith-thiyageswarakumar-25125b170" target="_blank" class="footer-social-link"><i class="fab fa-linkedin"></i><span>LINKEDIN</span></a>
+            </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
-
