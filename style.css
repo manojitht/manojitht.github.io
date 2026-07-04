@@ -20,9 +20,15 @@
     --text-color:     #201C2E;
 
     --ink:            #17141F;
+    --ink-rgb:        23,20,31;
     --text-primary:   #17141F;
     --text-secondary: #4A4560;
     --text-muted:     #837E96;
+
+    /* fixed dark text for chips/badges whose bg stays bright in both themes */
+    --ink-on-bright:  #17141F;
+    /* offset "print misalignment" shadow behind display titles */
+    --title-shadow:   var(--yellow);
 
     --font-header: 'Baloo 2', 'Nunito', sans-serif;
     --font-mono:   'Nunito', sans-serif;
@@ -36,6 +42,30 @@
     --glow-magenta: var(--pop-sm);
     --glow-purple:  var(--pop-sm);
     --glow-green:   var(--pop-sm);
+}
+
+:root[data-theme="dark"] {
+    --bg-primary:    #17141F;
+    --bg-secondary:  #221E30;
+    --bg-card:       #2A2438;
+
+    --cyan:       #6FA3FF;
+    --magenta:    #FF7A94;
+    --purple:     #B197FC;
+    --neon-green: #3FDB94;
+    --yellow:     #FFDD6E;
+    --sky-blue:   #6FA3FF;
+    --terminal-green: #6FA3FF;
+    --bg-color:       #17141F;
+    --text-color:     #F3EFE6;
+
+    --ink:            #F3EFE6;
+    --ink-rgb:        243,239,230;
+    --text-primary:   #F3EFE6;
+    --text-secondary: #C7C2D6;
+    --text-muted:     #8B85A0;
+
+    --title-shadow:   var(--magenta);
 }
 
 /* ─── RESET ─────────────────────────────────────── */
@@ -53,12 +83,13 @@ body {
     font-family: var(--font-mono);
     overflow-x: hidden;
     line-height: 1.65;
+    transition: background-color .3s ease, color .3s ease;
 }
 
 body::before {
     content: '';
     position: fixed; inset: 0;
-    background-image: radial-gradient(circle, rgba(23,20,31,.16) 1.6px, transparent 1.7px);
+    background-image: radial-gradient(circle, rgba(var(--ink-rgb),.16) 1.6px, transparent 1.7px);
     background-size: 16px 16px;
     opacity: .5;
     pointer-events: none; z-index: 0;
@@ -74,6 +105,32 @@ body::before {
 .blink       { animation: blink 1s step-end infinite; }
 
 /* ══════════════════════════════════════════════════
+   THEME TOGGLE
+   ══════════════════════════════════════════════════ */
+.theme-toggle {
+    position: fixed;
+    top: 14px; right: 20px;
+    z-index: 300;
+    width: 42px; height: 42px;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--bg-card);
+    color: var(--ink);
+    border: 2.5px solid var(--ink);
+    border-radius: 50%;
+    box-shadow: var(--pop-sm);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: transform .15s ease, box-shadow .15s ease, background .2s ease;
+}
+
+.theme-toggle:hover {
+    background: var(--cyan);
+    color: #fff;
+    transform: translate(-2px, -2px) rotate(-8deg);
+    box-shadow: 5px 5px 0 var(--ink);
+}
+
+/* ══════════════════════════════════════════════════
    SIDE NAV DOTS  →  comic sticker tabs
    ══════════════════════════════════════════════════ */
 .side-nav {
@@ -87,7 +144,7 @@ body::before {
 .side-dot {
     position: relative;
     width: 14px; height: 14px;
-    background: #fff;
+    background: var(--bg-card);
     border: 2.5px solid var(--ink);
     border-radius: 50%;
     cursor: pointer;
@@ -98,7 +155,7 @@ body::before {
 .side-dot::before { content: none; }
 
 .side-dot.active {
-    background: var(--yellow);
+    background: var(--cyan);
     transform: scale(1.2) rotate(-6deg);
 }
 
@@ -108,7 +165,7 @@ body::before {
     white-space: nowrap;
     font-family: var(--font-header);
     font-size: .68rem; letter-spacing: .5px; font-weight: 700;
-    color: var(--ink);
+    color: var(--ink-on-bright);
     opacity: 0; transition: .2s;
     pointer-events: none;
     background: var(--yellow);
@@ -138,7 +195,7 @@ body::before {
     font-weight: 800; font-size: 1.5rem;
     color: var(--text-primary);
     letter-spacing: 1px;
-    text-shadow: 2px 2px 0 var(--yellow);
+    text-shadow: 2px 2px 0 var(--title-shadow);
 }
 
 .nav-links { display: flex; gap: 10px; list-style: none; }
@@ -156,7 +213,8 @@ body::before {
 
 .nav-links a:hover {
     border-color: var(--ink);
-    background: var(--yellow);
+    background: var(--cyan);
+    color: #fff;
     box-shadow: 3px 3px 0 var(--ink);
     transform: translate(-1px, -1px);
 }
@@ -192,14 +250,14 @@ body::before {
     position: relative; word-spacing: 4px;
     word-break: break-word; overflow-wrap: break-word;
     font-weight: 800;
-    text-shadow: 3px 3px 0 var(--yellow);
+    text-shadow: 3px 3px 0 var(--title-shadow);
 }
 
 .role {
     color: var(--text-primary); font-size: .95rem;
     margin-bottom: 20px;
     display: inline-block;
-    background: #fff;
+    background: var(--bg-card);
     border: 2.5px solid var(--ink);
     border-radius: 20px;
     padding: 6px 16px;
@@ -211,7 +269,7 @@ body::before {
     font-size: .92rem; color: var(--text-primary); font-style: normal;
     margin-bottom: 26px; margin-top: 6px;
     display: inline-block; position: relative;
-    background: #fff; border: 2.5px solid var(--ink); border-radius: 18px;
+    background: var(--bg-card); border: 2.5px solid var(--ink); border-radius: 18px;
     padding: 12px 18px; box-shadow: 4px 4px 0 var(--ink);
 }
 
@@ -224,7 +282,7 @@ body::before {
 .tagline::after {
     content: '';
     position: absolute; left: 32px; bottom: -9px;
-    border: 9px solid transparent; border-top-color: #fff; border-bottom: 0;
+    border: 9px solid transparent; border-top-color: var(--bg-card); border-bottom: 0;
 }
 
 .mission-text { font-size: 1rem; margin-bottom: 28px; color: var(--text-secondary); line-height: 1.7; font-weight: 600; }
@@ -233,7 +291,7 @@ body::before {
 
 .awards-ticker {
     margin-top: 46px;
-    font-size: .78rem; color: var(--text-primary); font-weight: 700;
+    font-size: .78rem; color: var(--ink-on-bright); font-weight: 700;
     display: inline-block;
     background: var(--neon-green);
     border: 2.5px solid var(--ink);
@@ -256,7 +314,7 @@ body::before {
     border: 4px solid var(--ink);
     box-shadow: var(--pop-lg);
     background:
-        radial-gradient(circle, rgba(23,20,31,.14) 2px, transparent 2.2px) 0 0/18px 18px,
+        radial-gradient(circle, rgba(var(--ink-rgb),.14) 2px, transparent 2.2px) 0 0/18px 18px,
         var(--yellow);
     transform: rotate(-1.5deg);
     transition: transform .3s ease;
@@ -315,18 +373,18 @@ body::before {
 }
 
 .btn-primary {
-    background: var(--yellow);
-    color: var(--ink);
+    background: var(--magenta);
+    color: #fff;
 }
 
 .btn-primary:hover {
-    background: var(--yellow);
+    background: var(--magenta);
     transform: translate(-2px, -2px);
     box-shadow: 7px 7px 0 var(--ink);
 }
 
 .btn-secondary {
-    background: #fff; color: var(--ink);
+    background: var(--bg-card); color: var(--ink);
 }
 
 .btn-secondary:hover {
@@ -361,7 +419,7 @@ body::before {
 .stat-number-wrap {
     display: flex; align-items: center; justify-content: center; gap: 1px;
     width: 108px; height: 108px;
-    background: #fff;
+    background: var(--bg-card);
     border: 3.5px solid var(--ink);
     border-radius: 50%;
     box-shadow: var(--pop-md);
@@ -397,7 +455,7 @@ body::before {
 .section { padding: 100px 10%; position: relative; z-index: 1; }
 .section-alt {
     background: var(--bg-card);
-    background-image: radial-gradient(circle, rgba(23,20,31,.07) 1.5px, transparent 1.6px);
+    background-image: radial-gradient(circle, rgba(var(--ink-rgb),.07) 1.5px, transparent 1.6px);
     background-size: 16px 16px;
 }
 
@@ -416,6 +474,22 @@ body::before {
     height: 14px; z-index: -1;
     background: var(--yellow);
     transform: rotate(1deg);
+}
+
+.issue-tag {
+    display: block;
+    width: fit-content;
+    font-family: var(--font-header);
+    font-size: .68rem; font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--cyan);
+    background: var(--bg-card);
+    border: 2px solid var(--ink);
+    border-radius: 20px;
+    padding: 3px 13px;
+    margin-bottom: 14px;
+    transform: rotate(1.5deg);
+    box-shadow: 2px 2px 0 var(--ink);
 }
 
 /* ══════════════════════════════════════════════════
@@ -500,7 +574,7 @@ body::before {
 .skill-cluster-header {
     display: flex; align-items: center; gap: 10px;
     margin-bottom: 14px; padding-bottom: 12px;
-    border-bottom: 2px dashed rgba(23,20,31,.2);
+    border-bottom: 2px dashed rgba(var(--ink-rgb),.2);
 }
 
 .skill-cluster-header i {
@@ -527,8 +601,8 @@ body::before {
 .tag-c { color: #fff; background: var(--cyan); }
 .tag-p { color: #fff; background: var(--purple); }
 .tag-g { color: #fff; background: var(--neon-green); }
-.tag-m { color: var(--ink); background: var(--yellow); }
-.tag-y { color: var(--ink); background: var(--yellow); }
+.tag-m { color: var(--ink-on-bright); background: var(--yellow); }
+.tag-y { color: var(--ink-on-bright); background: var(--yellow); }
 
 .skill-tag:hover { transform: rotate(-4deg) translateY(-2px); }
 
@@ -557,7 +631,7 @@ body::before {
     position: absolute;
     left: -43px; top: 18px;
     width: 24px; height: 24px;
-    background: #fff;
+    background: var(--bg-card);
     clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
     filter: drop-shadow(2px 2px 0 var(--ink));
     transition: .3s;
@@ -615,7 +689,7 @@ body::before {
 }
 
 .tl-badge.current { color: #fff; background: var(--neon-green); }
-.tl-badge.past    { color: var(--text-primary); background: #fff; }
+.tl-badge.past    { color: var(--text-primary); background: var(--bg-card); }
 
 .tl-chevron {
     color: var(--ink); font-size: .9rem;
@@ -625,7 +699,7 @@ body::before {
 
 .timeline-item.tl-active .tl-chevron {
     transform: rotate(180deg);
-    color: var(--magenta);
+    color: var(--cyan);
 }
 
 .tl-body {
@@ -641,13 +715,13 @@ body::before {
 
 .tl-body-inner {
     padding-top: 16px;
-    border-top: 2px dashed rgba(23,20,31,.2);
+    border-top: 2px dashed rgba(var(--ink-rgb),.2);
 }
 
 .job-project {
     margin: 16px 0; padding: 14px 16px;
     border: 2px solid var(--ink);
-    background: #fff;
+    background: var(--bg-card);
     border-radius: 0 14px 14px 14px;
     transition: transform .2s;
 }
@@ -705,7 +779,7 @@ body::before {
 }
 
 .dossier-card .tags       { padding: 0 18px; }
-.dossier-card .card-links { padding: 14px 18px; border-top: 2px dashed rgba(23,20,31,.2); }
+.dossier-card .card-links { padding: 14px 18px; border-top: 2px dashed rgba(var(--ink-rgb),.2); }
 
 /* shared tags & links */
 .tags { margin-top: 10px; }
@@ -727,7 +801,7 @@ body::before {
     display: flex; align-items: center; gap: 5px;
 }
 
-.card-links a:hover { color: var(--magenta); }
+.card-links a:hover { color: var(--cyan); }
 
 /* ══════════════════════════════════════════════════
    ACHIEVEMENTS — TROPHY CASE (certs + awards merged)
@@ -778,7 +852,7 @@ body::before {
     position: absolute; top: 22px; right: 22px;
     font-family: var(--font-header);
     font-size: .65rem; font-weight: 700;
-    background: var(--yellow); color: var(--ink);
+    background: var(--yellow); color: var(--ink-on-bright);
     border: 2px solid var(--ink);
     border-radius: 20px; padding: 3px 11px;
     transform: rotate(4deg);
@@ -836,7 +910,7 @@ body::before {
 .comms-card::after {
     content: '';
     position: absolute; left: 42px; bottom: -13px;
-    border: 11px solid transparent; border-top-color: #fff; border-bottom: 0;
+    border: 11px solid transparent; border-top-color: var(--bg-card); border-bottom: 0;
 }
 
 .comms-controls {
@@ -858,7 +932,8 @@ body::before {
 }
 
 .comms-btn:hover {
-    background: var(--yellow);
+    background: var(--cyan);
+    color: #fff;
     transform: translate(-2px, -2px);
     box-shadow: 5px 5px 0 var(--ink);
 }
@@ -867,7 +942,7 @@ body::before {
 
 .comms-dot {
     width: 10px; height: 10px; border-radius: 50%;
-    background: #fff;
+    background: var(--bg-card);
     cursor: pointer; transition: .25s;
     border: 2px solid var(--ink);
 }
@@ -880,7 +955,7 @@ body::before {
 .comms-header {
     display: flex; justify-content: space-between; align-items: flex-start;
     margin-bottom: 14px; padding-bottom: 14px;
-    border-bottom: 2px dashed rgba(23,20,31,.2);
+    border-bottom: 2px dashed rgba(var(--ink-rgb),.2);
 }
 
 .comms-meta-row { margin-bottom: 5px; font-size: .78rem; }
@@ -900,7 +975,7 @@ body::before {
     padding: 90px 10%;
     text-align: center;
     background: var(--bg-secondary);
-    background-image: radial-gradient(circle, rgba(23,20,31,.1) 1.6px, transparent 1.7px);
+    background-image: radial-gradient(circle, rgba(var(--ink-rgb),.1) 1.6px, transparent 1.7px);
     background-size: 16px 16px;
     border-top: 3px solid var(--ink);
     position: relative; z-index: 1;
@@ -913,7 +988,7 @@ body::before {
     font-size: 2.6rem; font-weight: 800;
     color: var(--text-primary); letter-spacing: .5px;
     margin-bottom: 14px;
-    text-shadow: 3px 3px 0 var(--yellow);
+    text-shadow: 3px 3px 0 var(--title-shadow);
     transform: rotate(-1deg);
     display: inline-block;
 }
@@ -930,7 +1005,7 @@ body::before {
 .contact-card {
     display: flex; align-items: center; gap: 18px;
     padding: 22px 32px;
-    background: #fff;
+    background: var(--bg-card);
     border: 3px solid var(--ink);
     border-radius: 20px;
     text-decoration: none;
@@ -953,7 +1028,7 @@ body::before {
     flex-shrink: 0;
 }
 
-.contact-card-icon i { color: var(--ink); font-size: 1.2rem; }
+.contact-card-icon i { color: var(--ink-on-bright); font-size: 1.2rem; }
 
 .contact-card-body {
     display: flex; flex-direction: column; align-items: flex-start; gap: 4px;
@@ -976,7 +1051,7 @@ body::before {
 .modal {
     display: none; position: fixed; z-index: 2000;
     padding-top: 60px; left: 0; top: 0; width: 100%; height: 100%;
-    overflow: auto; background-color: rgba(23,20,31,.6);
+    overflow: auto; background-color: rgba(0,0,0,.6);
 }
 
 .modal-content {
@@ -1005,7 +1080,7 @@ body::before {
 
 /* Dossier / Fun Facts Modal */
 .dossier-box {
-    background: #fff;
+    background: var(--bg-card);
     border: 4px solid var(--ink);
     box-shadow: var(--pop-lg);
     padding: 0; width: 90%; max-width: 600px;
@@ -1017,7 +1092,7 @@ body::before {
 #dossier-content { padding: 36px; animation: fadeIn .4s ease; }
 
 .dossier-title {
-    color: var(--text-primary); border-bottom: 2px dashed rgba(23,20,31,.2);
+    color: var(--text-primary); border-bottom: 2px dashed rgba(var(--ink-rgb),.2);
     padding-bottom: 10px; margin-bottom: 28px;
     font-family: var(--font-header); font-weight: 800;
     font-size: 1.4rem;
@@ -1038,7 +1113,7 @@ body::before {
 
 /* Contact Modal */
 .contact-box {
-    background: #fff;
+    background: var(--bg-card);
     border: 4px solid var(--ink);
     box-shadow: var(--pop-lg);
     padding: 40px; text-align: center; max-width: 480px;
@@ -1048,7 +1123,7 @@ body::before {
 .comms-title {
     font-family: var(--font-header); color: var(--text-primary);
     margin-bottom: 28px;
-    border-bottom: 2px dashed rgba(23,20,31,.2); padding-bottom: 14px;
+    border-bottom: 2px dashed rgba(var(--ink-rgb),.2); padding-bottom: 14px;
     font-size: 1.3rem; font-weight: 800;
 }
 
@@ -1099,7 +1174,7 @@ footer {
     border: 2.5px solid var(--ink);
     transition: transform .15s; border-radius: 20px;
     font-weight: 700;
-    background: #fff;
+    background: var(--bg-card);
     box-shadow: 3px 3px 0 var(--ink);
 }
 
@@ -1108,7 +1183,8 @@ footer {
 .footer-social-link:hover {
     transform: translate(-2px, -2px);
     box-shadow: 5px 5px 0 var(--ink);
-    background: var(--yellow);
+    background: var(--cyan);
+    color: #fff;
 }
 
 /* ══════════════════════════════════════════════════

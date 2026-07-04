@@ -13,6 +13,28 @@ const PORTFOLIO_STATS = [
 document.addEventListener('DOMContentLoaded', () => {
 
     /* ──────────────────────────────────────────────
+       1. THEME TOGGLE — light/dark, persisted
+    ────────────────────────────────────────────── */
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = themeToggle ? themeToggle.querySelector('i') : null;
+
+    function syncThemeIcon() {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        if (themeIcon) themeIcon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+    }
+
+    syncThemeIcon();
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+            syncThemeIcon();
+        });
+    }
+
+    /* ──────────────────────────────────────────────
        2. STATS STRIP — render from config
     ────────────────────────────────────────────── */
     const statsStrip = document.getElementById('statsStrip');

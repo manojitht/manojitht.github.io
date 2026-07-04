@@ -11,8 +11,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <script>
+        (function () {
+            var saved = localStorage.getItem('theme');
+            var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
 </head>
 <body>
+
+    <!-- THEME TOGGLE -->
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+    </button>
 
     <!-- SIDE NAV DOTS -->
     <nav class="side-nav" id="sideNav">
@@ -41,7 +53,7 @@
 
         <div class="hero-left">
             <p class="system-msg">Hey, I'm</p>
-            <h1 class="hero-title">MANOJITH T.</h1>
+            <h1 class="hero-title">MANOJITH THIYAGESWARAKUMAR</h1>
             <h2 class="role">AI/ML Engineer &nbsp;·&nbsp; Ex-Sr. Software Engineer @ EFutures</h2>
             <p class="tagline">"I live in imagination, and bring it to existence." by Manojith</p>
             <p class="mission-text">I build smart AI agents and rock-solid backend systems that scale.</p>
@@ -72,6 +84,7 @@
 
     <!-- SKILLS -->
     <section id="skills" class="section section-alt">
+        <span class="issue-tag">Issue #01</span>
         <h2 class="section-title">Skills</h2>
         <div class="skills-grid">
 
@@ -161,6 +174,7 @@
 
     <!-- EXPERIENCE -->
     <section id="experience" class="section">
+        <span class="issue-tag">Issue #02</span>
         <h2 class="section-title">Experience</h2>
         <div class="timeline">
 
@@ -278,6 +292,7 @@
 
     <!-- PROJECTS -->
     <section id="projects" class="section section-alt">
+        <span class="issue-tag">Issue #03</span>
         <h2 class="section-title">Projects</h2>
         <div class="project-grid">
 
@@ -322,6 +337,7 @@
 
     <!-- ACHIEVEMENTS (certifications + awards, merged) -->
     <section id="achievements" class="section section-alt">
+        <span class="issue-tag">Issue #04</span>
         <h2 class="section-title">Trophy Case</h2>
         <div class="achievements-grid">
 
@@ -381,6 +397,7 @@
 
     <!-- EDUCATION -->
     <section id="education" class="section">
+        <span class="issue-tag">Issue #05</span>
         <h2 class="section-title">Education</h2>
         <div class="education-grid">
             <div class="edu-card">
@@ -402,6 +419,7 @@
 
     <!-- TESTIMONIALS -->
     <section id="testimonials" class="section">
+        <span class="issue-tag">Issue #06</span>
         <h2 class="section-title">What People Say</h2>
         <div class="comms-carousel">
             <div class="comms-track" id="commsTrack">
