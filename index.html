@@ -8,7 +8,7 @@
     <link rel="apple-touch-icon" href="assets/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -16,24 +16,23 @@
 
     <!-- SIDE NAV DOTS -->
     <nav class="side-nav" id="sideNav">
-        <div class="side-dot" data-target="hero"><span class="dot-label">HOME</span></div>
-        <div class="side-dot" data-target="education"><span class="dot-label">EDUCATION</span></div>
-        <div class="side-dot" data-target="skills"><span class="dot-label">SKILLS</span></div>
-        <div class="side-dot" data-target="experience"><span class="dot-label">EXPERIENCE</span></div>
-        <div class="side-dot" data-target="projects"><span class="dot-label">PROJECTS</span></div>
-        <div class="side-dot" data-target="certifications"><span class="dot-label">CERTS</span></div>
-        <div class="side-dot" data-target="awards"><span class="dot-label">AWARDS</span></div>
-        <div class="side-dot" data-target="testimonials"><span class="dot-label">TESTIMONIALS</span></div>
+        <div class="side-dot" data-target="hero"><span class="dot-label">Home</span></div>
+        <div class="side-dot" data-target="skills"><span class="dot-label">Skills</span></div>
+        <div class="side-dot" data-target="experience"><span class="dot-label">Experience</span></div>
+        <div class="side-dot" data-target="projects"><span class="dot-label">Projects</span></div>
+        <div class="side-dot" data-target="achievements"><span class="dot-label">Trophy Case</span></div>
+        <div class="side-dot" data-target="education"><span class="dot-label">Education</span></div>
+        <div class="side-dot" data-target="testimonials"><span class="dot-label">Testimonials</span></div>
     </nav>
 
     <!-- TOP NAV -->
     <nav class="hud-nav">
         <div class="logo">MANOJITH</div>
         <ul class="nav-links">
-            <li><a href="#education">EDUCATION</a></li>
-            <li><a href="#skills">SKILLS</a></li>
-            <li><a href="#experience">EXPERIENCE</a></li>
-            <li><a href="#certifications">CERTIFICATIONS</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#achievements">Trophy Case</a></li>
         </ul>
     </nav>
 
@@ -41,17 +40,17 @@
     <header class="hero" id="hero">
 
         <div class="hero-left">
-            <p class="system-msg">HELLO, I AM</p>
-            <h1 class="glitch" data-text="MANOJITH THIYAGESWARAKUMAR">MANOJITH T.</h1>
-            <h2 class="role">AI/ML ENGINEER &nbsp;|&nbsp; Ex-SR. SOFTWARE ENGINEER @ EFutures</h2>
-            <p class="tagline">"I live in imagination, and bring it to existence." — Manojith</p>
-            <p class="mission-text">I engineer intelligent AI agents and high-performance backend systems optimized for scale.</p>
+            <p class="system-msg">Hey, I'm</p>
+            <h1 class="hero-title">MANOJITH T.</h1>
+            <h2 class="role">AI/ML Engineer &nbsp;·&nbsp; Ex-Sr. Software Engineer @ EFutures</h2>
+            <p class="tagline">"I live in imagination, and bring it to existence." by Manojith</p>
+            <p class="mission-text">I build smart AI agents and rock-solid backend systems that scale.</p>
             <div class="cta-group">
-                <a href="javascript:void(0)" class="btn btn-primary" onclick="openContactModal()">CONTACT ME</a>
-                <a href="javascript:void(0)" class="btn btn-secondary" onclick="openClassifiedModal()">FUN FACTS</a>
+                <a href="javascript:void(0)" class="btn btn-primary" onclick="openContactModal()">Say Hello</a>
+                <a href="javascript:void(0)" class="btn btn-secondary" onclick="openClassifiedModal()">Fun Facts</a>
             </div>
             <div class="awards-ticker">
-                <span><b>WORKED WITH TEAMS ACHIEVED:</b> National Ingenuity SLASSCOM Gold 2025 | NBQSA Silver Award 2025</span>
+                <span><b>Team wins:</b> SLASSCOM Ingenuity Gold 2025 · NBQSA Silver 2025</span>
             </div>
         </div>
 
@@ -71,36 +70,15 @@
     <!-- STATS STRIP -->
     <div class="stats-strip" id="statsStrip"></div>
 
-    <!-- EDUCATION -->
-    <section id="education" class="section">
-        <h2 class="section-title">EDUCATION</h2>
-        <div class="education-grid">
-            <div class="edu-card">
-                <span class="edu-status-badge in-progress">IN PROGRESS</span>
-                <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
-                <h3>MSc in Artificial Intelligence</h3>
-                <span class="edu-place">SriLanka Institute of Information Technology</span>
-                <p>2025 → 2027</p>
-            </div>
-            <div class="edu-card">
-                <span class="edu-status-badge completed">COMPLETED</span>
-                <div class="edu-icon"><i class="fas fa-university"></i></div>
-                <h3>BSc (Hons) Computer Science &amp; Software Engineering</h3>
-                <span class="edu-place">Kingston University London &nbsp;·&nbsp; GPA: 3.5 / 4.0</span>
-                <p>Completed: 2023</p>
-            </div>
-        </div>
-    </section>
-
     <!-- SKILLS -->
     <section id="skills" class="section section-alt">
-        <h2 class="section-title">SKILLS</h2>
+        <h2 class="section-title">Skills</h2>
         <div class="skills-grid">
 
             <div class="skill-cluster" style="--cc: var(--cyan)">
                 <div class="skill-cluster-header">
                     <i class="fas fa-brain"></i>
-                    <span class="skill-cluster-name">AI &amp; ML ENGINEERING</span>
+                    <span class="skill-cluster-name">AI &amp; ML Engineering</span>
                 </div>
                 <div class="skill-tags">
                     <span class="skill-tag tag-c">OpenAI GPT-4/5</span>
@@ -118,7 +96,7 @@
             <div class="skill-cluster" style="--cc: var(--purple)">
                 <div class="skill-cluster-header">
                     <i class="fas fa-server"></i>
-                    <span class="skill-cluster-name">BACKEND ENGINEERING</span>
+                    <span class="skill-cluster-name">Backend Engineering</span>
                 </div>
                 <div class="skill-tags">
                     <span class="skill-tag tag-p">Python</span>
@@ -134,7 +112,7 @@
             <div class="skill-cluster" style="--cc: var(--neon-green)">
                 <div class="skill-cluster-header">
                     <i class="fas fa-cloud"></i>
-                    <span class="skill-cluster-name">CLOUD &amp; DEVOPS</span>
+                    <span class="skill-cluster-name">Cloud &amp; DevOps</span>
                 </div>
                 <div class="skill-tags">
                     <span class="skill-tag tag-g">AWS Bedrock</span>
@@ -150,7 +128,7 @@
             <div class="skill-cluster" style="--cc: var(--magenta)">
                 <div class="skill-cluster-header">
                     <i class="fas fa-database"></i>
-                    <span class="skill-cluster-name">DATABASE SYSTEMS</span>
+                    <span class="skill-cluster-name">Database Systems</span>
                 </div>
                 <div class="skill-tags">
                     <span class="skill-tag tag-m">PostgreSQL</span>
@@ -167,7 +145,7 @@
             <div class="skill-cluster" style="--cc: var(--yellow)">
                 <div class="skill-cluster-header">
                     <i class="fas fa-laptop-code"></i>
-                    <span class="skill-cluster-name">FRONTEND &amp; INTERFACE</span>
+                    <span class="skill-cluster-name">Frontend &amp; Interface</span>
                 </div>
                 <div class="skill-tags">
                     <span class="skill-tag tag-y">React.js</span>
@@ -183,7 +161,7 @@
 
     <!-- EXPERIENCE -->
     <section id="experience" class="section">
-        <h2 class="section-title">EXPERIENCE</h2>
+        <h2 class="section-title">Experience</h2>
         <div class="timeline">
 
             <!-- EFutures -->
@@ -193,15 +171,15 @@
                     <div class="tl-header">
                         <div class="tl-meta">
                             <span class="tl-date">NOV 2024 — PRESENT</span>
-                            <h3 class="tl-role">SR. SOFTWARE ENGINEER</h3>
-                            <span class="tl-company">EFutures &nbsp;<span class="tl-badge current">CURRENT</span></span>
+                            <h3 class="tl-role">Sr. Software Engineer</h3>
+                            <span class="tl-company">EFutures &nbsp;<span class="tl-badge current">Current</span></span>
                         </div>
                         <i class="fas fa-chevron-down tl-chevron"></i>
                     </div>
                     <div class="tl-body">
                         <div class="tl-body-inner">
                             <div class="job-project">
-                                <h5 class="project-name">RESUME SCREENING &amp; SHORTLISTING [In-House]</h5>
+                                <h5 class="project-name">Resume Screening &amp; Shortlisting (In-House)</h5>
                                 <ul>
                                     <li><span class="bullet">·</span> Implemented Parallelization design pattern for LLM model to rank candidates by job relevance.</li>
                                     <li><span class="bullet">·</span> Built RAG-based workflow storing unstructured PDF/DOCX resume data in vector store for similarity search.</li>
@@ -212,7 +190,7 @@
                                 </ul>
                             </div>
                             <div class="job-project">
-                                <h5 class="project-name">USA BASED LOGISTICS CLIENT</h5>
+                                <h5 class="project-name">USA-Based Logistics Client</h5>
                                 <ul>
                                     <li><span class="bullet">·</span> Designed container space optimization algorithm using Bin Packing / Knapsack approach.</li>
                                     <li><span class="bullet">·</span> Integrated 3D visualization module for optimized layouts, improving load efficiency.</li>
@@ -220,7 +198,7 @@
                                 </ul>
                             </div>
                             <div class="job-project">
-                                <h5 class="project-name">UK BASED PARCEL DELIVERY CLIENT</h5>
+                                <h5 class="project-name">UK-Based Parcel Delivery Client</h5>
                                 <ul>
                                     <li><span class="bullet">·</span> Built conversational AI Agent with MongoDB integration, reducing LLM API costs by 40%.</li>
                                     <li><span class="bullet">·</span> Enhanced performance through RAG and semantic caching, reducing query latency.</li>
@@ -228,7 +206,7 @@
                                 </ul>
                             </div>
                             <div class="job-project">
-                                <h5 class="project-name">SWEDEN BASED THERAPIST CLIENT [PROTOTYPE]</h5>
+                                <h5 class="project-name">Sweden-Based Therapist Client (Prototype)</h5>
                                 <ul>
                                     <li><span class="bullet">·</span> Developed real-time group chat therapy prototype with LLM integration for couples.</li>
                                     <li><span class="bullet">·</span> Implemented customizable session prompt feature for therapist control.</li>
@@ -247,15 +225,15 @@
                     <div class="tl-header">
                         <div class="tl-meta">
                             <span class="tl-date">SEP 2023 — SEP 2024</span>
-                            <h3 class="tl-role">SOFTWARE ENGINEER</h3>
-                            <span class="tl-company">Innodata &nbsp;<span class="tl-badge past">COMPLETED</span></span>
+                            <h3 class="tl-role">Software Engineer</h3>
+                            <span class="tl-company">Innodata &nbsp;<span class="tl-badge past">Completed</span></span>
                         </div>
                         <i class="fas fa-chevron-down tl-chevron"></i>
                     </div>
                     <div class="tl-body">
                         <div class="tl-body-inner">
                             <div class="job-project">
-                                <h5 class="project-name">INTELLIGENT AUTOMATED PUBLISHING PLATFORM [PRODUCT]</h5>
+                                <h5 class="project-name">Intelligent Automated Publishing Platform (Product)</h5>
                                 <ul>
                                     <li><span class="bullet">·</span> Built NLP text summarization for German XML datasets (10K–30K words).</li>
                                     <li><span class="bullet">·</span> Reduced frontend bug density by 32%.</li>
@@ -275,15 +253,15 @@
                     <div class="tl-header">
                         <div class="tl-meta">
                             <span class="tl-date">JUN 2022 — SEP 2023</span>
-                            <h3 class="tl-role">ASSOCIATE SOFTWARE ENGINEER</h3>
-                            <span class="tl-company">Virtusa &nbsp;<span class="tl-badge past">COMPLETED</span></span>
+                            <h3 class="tl-role">Associate Software Engineer</h3>
+                            <span class="tl-company">Virtusa &nbsp;<span class="tl-badge past">Completed</span></span>
                         </div>
                         <i class="fas fa-chevron-down tl-chevron"></i>
                     </div>
                     <div class="tl-body">
                         <div class="tl-body-inner">
                             <div class="job-project">
-                                <h5 class="project-name">USA BASED WAREHOUSE CLIENT</h5>
+                                <h5 class="project-name">USA-Based Warehouse Client</h5>
                                 <ul>
                                     <li><span class="bullet">·</span> Implemented automated email flagging system for warehouse logistics.</li>
                                     <li><span class="bullet">·</span> Optimized case management workflows for the client.</li>
@@ -300,11 +278,11 @@
 
     <!-- PROJECTS -->
     <section id="projects" class="section section-alt">
-        <h2 class="section-title">PROJECTS</h2>
+        <h2 class="section-title">Projects</h2>
         <div class="project-grid">
 
             <div class="dossier-card">
-                <h3 class="dossier-title"><i class="fas fa-user"></i> ORMS: RESOURCE TRACKING</h3>
+                <h3 class="dossier-title"><i class="fas fa-user"></i> ORMS: Resource Tracking</h3>
                 <p class="dossier-brief">Web-based resource tracking platform with recommendation algorithms to optimize allocation efficiency.</p>
                 <div class="tags">
                     <span>Python</span><span>Django</span><span>PostgreSQL</span><span>JavaScript</span>
@@ -316,7 +294,7 @@
             </div>
 
             <div class="dossier-card">
-                <h3 class="dossier-title"><i class="fas fa-gas-pump"></i> POWER FUEL SYSTEM</h3>
+                <h3 class="dossier-title"><i class="fas fa-gas-pump"></i> Power Fuel System</h3>
                 <p class="dossier-brief">Multi-platform fuel management system (Web &amp; Mobile) with QR verification and real-time quota synchronization.</p>
                 <div class="tags">
                     <span>Python</span><span>Django</span><span>HTML</span><span>CSS</span><span>Bootstrap</span>
@@ -328,7 +306,7 @@
             </div>
 
             <div class="dossier-card">
-                <h3 class="dossier-title"><i class="fas fa-heartbeat"></i> MEDI-APP</h3>
+                <h3 class="dossier-title"><i class="fas fa-heartbeat"></i> Medi-App</h3>
                 <p class="dossier-brief">Android mobile-based medical e-commerce management system with admin panel, real-time data sync and analytics.</p>
                 <div class="tags">
                     <span>Java</span><span>Android Studio</span><span>Firebase</span><span>Firestore</span>
@@ -342,92 +320,89 @@
         </div>
     </section>
 
-    <!-- CERTIFICATIONS -->
-    <section id="certifications" class="section">
-        <h2 class="section-title">CERTIFICATIONS</h2>
-        <div class="cert-strip">
+    <!-- ACHIEVEMENTS (certifications + awards, merged) -->
+    <section id="achievements" class="section section-alt">
+        <h2 class="section-title">Trophy Case</h2>
+        <div class="achievements-grid">
 
-            <div class="cert-item" onclick="openModal('assets/certs/oci_generative_ai_professional_2025.png')">
-                <div class="cert-badge-icon cyan-cert"><i class="fas fa-certificate"></i></div>
-                <div class="cert-info">
-                    <span class="cert-issuer">ORACLE CLOUD INFRASTRUCTURE</span>
-                    <h3 class="cert-name">OCI Gen AI Professional</h3>
-                    <span class="cert-year">2025</span>
-                </div>
-                <div class="cert-action">View</div>
+            <div class="achievement-card" onclick="openModal('assets/certs/oci_generative_ai_professional_2025.png')">
+                <div class="achievement-icon cyan-cert"><i class="fas fa-certificate"></i></div>
+                <span class="achievement-year">2025</span>
+                <span class="achievement-org">Oracle Cloud Infrastructure</span>
+                <h3 class="achievement-name">OCI Gen AI Professional</h3>
+                <span class="achievement-action">Tap to view →</span>
             </div>
 
-            <div class="cert-item" onclick="openModal('assets/certs/oci_ai_foundations_associate_2025.png')">
-                <div class="cert-badge-icon magenta-cert"><i class="fas fa-certificate"></i></div>
-                <div class="cert-info">
-                    <span class="cert-issuer">ORACLE CLOUD INFRASTRUCTURE</span>
-                    <h3 class="cert-name">OCI AI Foundations Associate</h3>
-                    <span class="cert-year">2025</span>
-                </div>
-                <div class="cert-action">View</div>
+            <div class="achievement-card" onclick="openModal('assets/certs/oci_ai_foundations_associate_2025.png')">
+                <div class="achievement-icon magenta-cert"><i class="fas fa-certificate"></i></div>
+                <span class="achievement-year">2025</span>
+                <span class="achievement-org">Oracle Cloud Infrastructure</span>
+                <h3 class="achievement-name">OCI AI Foundations Associate</h3>
+                <span class="achievement-action">Tap to view →</span>
             </div>
 
-            <div class="cert-item" onclick="openModal('assets/certs/advanced_python.png')">
-                <div class="cert-badge-icon purple-cert"><i class="fas fa-code"></i></div>
-                <div class="cert-info">
-                    <span class="cert-issuer">PROGRAMMING CERTIFICATION</span>
-                    <h3 class="cert-name">Advanced Python</h3>
-                    <span class="cert-year">—</span>
-                </div>
-                <div class="cert-action">View</div>
+            <div class="achievement-card" onclick="openModal('assets/certs/advanced_python.png')">
+                <div class="achievement-icon purple-cert"><i class="fas fa-code"></i></div>
+                <span class="achievement-year">2022</span>
+                <span class="achievement-org">Programming Certification</span>
+                <h3 class="achievement-name">Advanced Python</h3>
+                <span class="achievement-action">Tap to view →</span>
             </div>
 
-            <div class="cert-item" onclick="openModal('assets/certs/software_architecture_from_developer_to_architect.png')">
-                <div class="cert-badge-icon green-cert"><i class="fas fa-layer-group"></i></div>
-                <div class="cert-info">
-                    <span class="cert-issuer">ARCHITECTURE CERTIFICATION</span>
-                    <h3 class="cert-name">Software Architecture</h3>
-                    <span class="cert-year">—</span>
-                </div>
-                <div class="cert-action">View</div>
+            <div class="achievement-card" onclick="openModal('assets/certs/software_architecture_from_developer_to_architect.png')">
+                <div class="achievement-icon green-cert"><i class="fas fa-layer-group"></i></div>
+                <span class="achievement-year">2022</span>
+                <span class="achievement-org">Architecture Certification</span>
+                <h3 class="achievement-name">Software Architecture</h3>
+                <span class="achievement-action">Tap to view →</span>
+            </div>
+
+            <div class="achievement-card">
+                <div class="achievement-icon silver-award"><i class="fas fa-medal"></i></div>
+                <span class="achievement-year">2025</span>
+                <span class="achievement-org">National ICT Awards (NBQSA)</span>
+                <h3 class="achievement-name">Silver Winner</h3>
+                <p class="achievement-desc">Recognized for excellence in Industrial Transport solutions. Competed against top national engineering teams.</p>
+                <div class="tags"><span>National Level</span><span>Innovation</span></div>
+            </div>
+
+            <div class="achievement-card" onclick="openModal('assets/certs/adaptiq_judge.jpeg')">
+                <div class="achievement-icon cyan-award"><i class="fas fa-gavel"></i></div>
+                <span class="achievement-year">2025</span>
+                <span class="achievement-org">ADAPTIQ Hackathon — IEEE IIT</span>
+                <h3 class="achievement-name">Technical Judge</h3>
+                <p class="achievement-desc">Invited as technical evaluator for the ADAPTIQ Innovation Competition (IEEE Student Branch at IIT). Assessed algorithmic efficiency, creative problem solving, and system adaptability.</p>
+                <div class="tags"><span>IEEE</span><span>System Evaluator</span></div>
+                <span class="achievement-action">Tap to view appreciation →</span>
             </div>
 
         </div>
     </section>
 
-    <!-- AWARDS -->
-    <section id="awards" class="section section-alt">
-        <h2 class="section-title">AWARDS</h2>
-        <div class="awards-showcase">
-
-            <div class="award-badge-card">
-                <div class="award-icon-wrap silver-award"><i class="fas fa-medal"></i></div>
-                <div class="award-body">
-                    <span class="award-org">NATIONAL ICT AWARDS (NBQSA)</span>
-                    <h3 class="award-name">Silver Winner</h3>
-                    <span class="award-year-badge">2025</span>
-                    <p>Recognized for excellence in Industrial Transport solutions. Competed against top national engineering teams.</p>
-                    <div class="tags"><span>National Level</span><span>Innovation</span></div>
-                </div>
+    <!-- EDUCATION -->
+    <section id="education" class="section">
+        <h2 class="section-title">Education</h2>
+        <div class="education-grid">
+            <div class="edu-card">
+                <span class="edu-status-badge in-progress">In Progress</span>
+                <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+                <h3>MSc in Artificial Intelligence</h3>
+                <span class="edu-place">SriLanka Institute of Information Technology</span>
+                <p>2025 → 2027</p>
             </div>
-
-            <div class="award-badge-card">
-                <div class="award-icon-wrap cyan-award"><i class="fas fa-gavel"></i></div>
-                <div class="award-body">
-                    <span class="award-org">ADAPTIQ HACKATHON — IEEE IIT</span>
-                    <h3 class="award-name">Technical Judge</h3>
-                    <span class="award-year-badge">2025</span>
-                    <p>Invited as technical evaluator for ADAPTIQ Innovation Competition (IEEE Student Branch at IIT). Assessed algorithmic efficiency, creative problem solving, and system adaptability.</p>
-                    <div class="tags"><span>IEEE</span><span>System Evaluator</span></div>
-                    <div class="card-links">
-                        <a href="javascript:void(0)" onclick="openModal('assets/certs/adaptiq_judge.jpeg')">
-                            <i class="fas fa-eye"></i> View Appreciation
-                        </a>
-                    </div>
-                </div>
+            <div class="edu-card">
+                <span class="edu-status-badge completed">Completed</span>
+                <div class="edu-icon"><i class="fas fa-university"></i></div>
+                <h3>BSc (Hons) Computer Science &amp; Software Engineering</h3>
+                <span class="edu-place">Kingston University London &nbsp;·&nbsp; GPA: 3.5 / 4.0</span>
+                <p>Completed: 2023</p>
             </div>
-
         </div>
     </section>
 
     <!-- TESTIMONIALS -->
     <section id="testimonials" class="section">
-        <h2 class="section-title">TESTIMONIALS</h2>
+        <h2 class="section-title">What People Say</h2>
         <div class="comms-carousel">
             <div class="comms-track" id="commsTrack">
 
@@ -435,7 +410,7 @@
                     <div class="comms-header">
                         <div class="comms-meta-left">
                             <div class="comms-meta-row"><span class="comms-key">Name:</span> <span class="comms-val">Chinthaka Fernando</span></div>
-                            <div class="comms-meta-row"><span class="comms-key">Role:</span> <span class="comms-val">Senior Manager — Process Improvement @ EFutures</span></div>
+                            <div class="comms-meta-row"><span class="comms-key">Role:</span> <span class="comms-val">Senior Manager - Process Improvement @ EFutures</span></div>
                         </div>
                     </div>
                     <p class="comms-message">
@@ -464,6 +439,38 @@
                     </p>
                 </div>
 
+                <div class="comms-card">
+                    <div class="comms-header">
+                        <div class="comms-meta-left">
+                            <div class="comms-meta-row"><span class="comms-key">Name:</span> <span class="comms-val">Sanali Kaushalya</span></div>
+                            <div class="comms-meta-row"><span class="comms-key">Role:</span> <span class="comms-val">Country Director - Women in Tech Global (Sri Lanka)</span></div>
+                        </div>
+                    </div>
+                    <p class="comms-message">
+                        "I had the pleasure of working with Manojith, and I can confidently say he is a highly disciplined and ethical professional who consistently brings a strong sense of responsibility to his work. 
+                        He approaches every task with focus and integrity, ensuring high standards are maintained at all times. What truly sets Manojith apart is his eagerness to learn and his willingness to experiment 
+                        with new ideas. He is not someone who settles for the usual approach - instead, he actively looks for better, more efficient ways to get things done, which adds real value to the team.
+                        He also has a great attitude and is a supportive team player. During the time we worked together, he was always open to sharing his knowledge and insights, which made collaboration both productive 
+                        and enjoyable. Manojith would be a valuable asset to any team, and I highly recommend him to anyone looking for a dedicated, curious, and dependable professional."
+                    </p>
+                </div>
+
+                <div class="comms-card">
+                    <div class="comms-header">
+                        <div class="comms-meta-left">
+                            <div class="comms-meta-row"><span class="comms-key">Name:</span> <span class="comms-val">Adeesha Anjana</span></div>
+                            <div class="comms-meta-row"><span class="comms-key">Role:</span> <span class="comms-val">Senior R&D Engineer @ Frontwalker Sri Lanka</span></div>
+                        </div>
+                    </div>
+                    <p class="comms-message">
+                        "I had the pleasure of working closely with Manojith on the same team at EFUTURES, and he is an exceptional engineer. What immediately stands out about Manojith is his deep curiosity and technical 
+                        capability, particularly when it comes to cutting-edge technologies like Generative AI and Machine Learning. He is a remarkably fast learner who doesn't just adapt to new concepts he masters them 
+                        quickly and looks for ways to apply them practically to add real value to the project. He is always willing to experiment and push the boundaries to find the most efficient solution.
+                        Beyond his sharp technical skills, Manojith is a reliable, supportive, and highly collaborative teammate with a fantastic attitude. He brings great energy to the team and is always ready to share 
+                        knowledge or jump in to solve complex challenges. He would be a massive asset to any forward-thinking engineering team, and I highly recommend him."
+                    </p>
+                </div>
+
             </div>
             <div class="comms-controls">
                 <button class="comms-btn" id="commsPrev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
@@ -476,20 +483,20 @@
     <!-- REACH OUT -->
     <section class="reach-out-section">
         <div class="reach-out-inner">
-            <h2 class="reach-out-title">LET'S CONNECT</h2>
+            <h2 class="reach-out-title">Let's Team Up!</h2>
             <p class="reach-out-sub">Available 6AM – 11PM IST &nbsp;·&nbsp; Colombo, Sri Lanka</p>
             <div class="contact-cards">
                 <a href="tel:+94777210098" class="contact-card">
                     <div class="contact-card-icon"><i class="fas fa-phone-alt"></i></div>
                     <div class="contact-card-body">
-                        <span class="contact-card-label">PHONE</span>
+                        <span class="contact-card-label">Phone</span>
                         <span class="contact-card-value">+94 777 210 098</span>
                     </div>
                 </a>
                 <a href="mailto:manojithtjmkm@gmail.com" class="contact-card">
                     <div class="contact-card-icon"><i class="fas fa-envelope"></i></div>
                     <div class="contact-card-body">
-                        <span class="contact-card-label">EMAIL</span>
+                        <span class="contact-card-label">Email</span>
                         <span class="contact-card-value">manojithtjmkm@gmail.com</span>
                     </div>
                 </a>
@@ -502,7 +509,7 @@
         <div class="modal-content dossier-box">
             <span class="close-modal" onclick="closeClassifiedModal()">&times;</span>
             <div id="dossier-content">
-                <h2 class="dossier-title">ABOUT ME</h2>
+                <h2 class="dossier-title">A Few Fun Facts</h2>
                 <div class="dossier-grid">
                     <div class="fact-card"><i class="fas fa-coffee"></i><h3>Daily Fuel</h3><p>1–2 Cups of Coffee</p></div>
                     <div class="fact-card"><i class="fas fa-gamepad"></i><h3>Downtime</h3><p>Day Dreaming</p></div>
@@ -521,7 +528,7 @@
     <div id="contact-modal" class="modal">
         <div class="modal-content contact-box">
             <span class="close-modal" onclick="closeContactModal()">&times;</span>
-            <h2 class="comms-title">GET IN TOUCH</h2>
+            <h2 class="comms-title">Get In Touch</h2>
             <div class="contact-grid">
                 <a href="tel:+94777210098" class="contact-option">
                     <i class="fas fa-phone-alt"></i><span>+94 777210098</span>

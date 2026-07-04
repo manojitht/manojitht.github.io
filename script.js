@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════
-   CYBERPUNK 3.0 — PORTFOLIO SCRIPT
+   COMIC POP — PORTFOLIO SCRIPT
    ═══════════════════════════════════════════════════ */
 
 /* ─── PORTFOLIO CONFIG — edit these to update stats ─── */
@@ -43,23 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (ageEl) ageEl.textContent = calcAge() + ' YRS';
 
     /* ──────────────────────────────────────────────
-       3. HERO GLITCH TYPING
-    ────────────────────────────────────────────── */
-    const glitchEl = document.querySelector('.glitch');
-    if (glitchEl) {
-        const fullText = glitchEl.getAttribute('data-text');
-        glitchEl.textContent = '';
-        let i = 0;
-        const type = () => {
-            if (i < fullText.length) {
-                glitchEl.textContent += fullText[i++];
-                setTimeout(type, 48);
-            }
-        };
-        setTimeout(type, 200);
-    }
-
-    /* ──────────────────────────────────────────────
        4. SIDE NAV DOTS
     ────────────────────────────────────────────── */
     const dots = document.querySelectorAll('.side-dot');
@@ -71,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    const sectionIds = ['hero', 'education', 'skills', 'experience', 'projects', 'certifications', 'awards', 'testimonials'];
+    const sectionIds = ['hero', 'skills', 'experience', 'projects', 'achievements', 'education', 'testimonials'];
 
     const dotObserver = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -127,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ──────────────────────────────────────────────
        8. SCROLL FADE-IN — staggered card animations
     ────────────────────────────────────────────── */
-    const CARD_SEL = '.edu-card, .skill-cluster, .dossier-card, .cert-item, .award-badge-card, .comms-carousel, .timeline-item';
+    const CARD_SEL = '.edu-card, .skill-cluster, .dossier-card, .achievement-card, .comms-carousel, .timeline-item';
 
     // Section-level fade
     document.querySelectorAll('.section, .reach-out-section, #statsStrip').forEach(el => {
@@ -196,22 +179,6 @@ document.addEventListener('DOMContentLoaded', () => {
         resetAuto();
     })();
 
-    /* ──────────────────────────────────────────────
-       9. PROFILE HUD — reticle glitch flash
-    ────────────────────────────────────────────── */
-    const profileHud = document.querySelector('.profile-hud');
-    if (profileHud) {
-        const corners = profileHud.querySelectorAll('.hud-corner');
-        profileHud.addEventListener('mouseenter', () => {
-            corners.forEach(c => {
-                c.style.borderColor = '#fff';
-                setTimeout(() => {
-                    c.style.borderColor = '#E8B84B';
-                    setTimeout(() => { c.style.borderColor = ''; }, 200);
-                }, 140);
-            });
-        });
-    }
 });
 
 /* ═══════════════════════════════════════════════════
